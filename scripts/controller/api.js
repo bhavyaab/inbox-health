@@ -69,8 +69,8 @@ function listLabels() {
 
     if (labels && labels.length > 0) {
       for (i = 0; i < labels.length; i++) {
-       var label = labels[i];
-       appendPre(label.name)
+        var label = labels[i];
+        appendPre(label.name);
       }
     } else {
       appendPre('No Labels found.');
@@ -89,6 +89,3 @@ function appendPre(message) {
   var textContent = document.createTextNode(message + '\n');
   pre.appendChild(textContent);
 }
-
-</script>
-<script src="https://apis.google.com/js/client.js?onload=checkAuth">
