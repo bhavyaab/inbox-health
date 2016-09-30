@@ -1,5 +1,5 @@
 {
-  "name":"inbox-health",
+  "name": "inbox-health",
   "version": "1.0.0",
   "description": "to unsubscribe emails sender",
   "main": "server.js",
