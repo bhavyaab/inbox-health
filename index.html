@@ -7,8 +7,9 @@
   <body>
     <!-- Input Field For Testing -->
     <section>
-      <form>
-        <input type="type" name="email" placeholder="Enter your email">
+      <form name = "user_email" onsubmit="return validateForm()">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="password" name="pwd" placeholder="Enter your password" required>
         <button type="submit" name="submit">SCAN EMAIL</button>
       </form>
     </section>
@@ -18,4 +19,7 @@
       <p>Data</p>
     </section>
   </body>
+  <script src="scripts/controller/userInput.js"></script>
+  <script src="package.json"></script>
+  <script src="server.js"></script>
 </html>
