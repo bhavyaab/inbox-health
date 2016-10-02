@@ -51,5 +51,6 @@ function handleAuthClick(event) {
 */
 function loadGmailApi() {
   gapi.client.load('gmail', 'v1', listMessages);
+  // gapi.client.load('gmail', 'v1', getMessage);
 }
 /*listMessage is decleared in api.js*/

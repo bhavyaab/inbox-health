@@ -15,7 +15,8 @@ var resultId = [];
  4.includeSpamTrash is passed true for including trash and spam folder.
  5.q has assigned value for filterout messages which has  'unsubscribe, safeunsubscribe'.
  */
-function listMessages(me, query, callback){
+// var query ='unsubscribe, Unsubscribe, opt out, #op out';
+function listMessages(me, query){
   var getPageOfMessages = function(request, result) {
     request.execute(function(resp) {
       result = result.concat(resp.messages);
@@ -24,18 +25,20 @@ function listMessages(me, query, callback){
         request = gapi.client.gmail.users.messages.list({
           'userId': 'me',
           'pageToken': nextPageToken,
-          'q': 'unsubscribe'
+          'q': 'unsubscribe, Unsubscribe, opt out, #op out',
         });
         getPageOfMessages(request, result);
       } else {
-     //    callback(result);
+        resp.messages.forEach(function(item){
+          resultId.push(item);
+          getMessage(me, item.id);
+        });
       }
-      resultId.push(resp.messages);
     });
   };
   var initialRequest = gapi.client.gmail.users.messages.list({
     'userId': 'me',
-    'q': 'unsubscribe'
+    'q':'unsubscribe, Unsubscribe, opt out, #op out',
   });
-  getPageOfMessages(initialRequest, []);
+  getPageOfMessages(initialRequest,[]);
 }
