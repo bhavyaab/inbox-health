@@ -1,12 +1,12 @@
-// Your Client ID can be retrieved from your project in the Google
-// Developer Console, https://console.developers.google.com
+//TODO: hide clint_ID and SCOPE ie add proxy.
 var CLIENT_ID = '177098992391-62qc3rb4ovmlss7vtko4e280pgj6p8pp.apps.googleusercontent.com';
 
-var SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
-
+var SCOPES = ['https://www.googleapis.com/auth/gmail.modify'];
 /**
 * Check if current user has authorized this application.
+this function is been called in the script tag onloading time.
 */
+
 function checkAuth() {
   gapi.auth.authorize(
     {
@@ -16,9 +16,9 @@ function checkAuth() {
     }, handleAuthResult);
 }
 
-/**
+
+/**2**
 * Handle response from authorization server.
-*
 * @param {Object} authResult Authorization result.
 */
 function handleAuthResult(authResult) {
@@ -34,9 +34,8 @@ function handleAuthResult(authResult) {
   }
 }
 
-/**
+/**1**
 * Initiate auth flow in response to user clicking authorize button.
-*
 * @param {Event} event Button click event.
 */
 function handleAuthClick(event) {
@@ -46,46 +45,12 @@ function handleAuthClick(event) {
   return false;
 }
 
-/**
+/**3**
 * Load Gmail API client library. List labels once client library
 * is loaded.
 */
 function loadGmailApi() {
-  gapi.client.load('gmail', 'v1', listLabels);
+  gapi.client.load('gmail', 'v1', listMessages);
+  // gapi.client.load('gmail', 'v1', getMessage);
 }
-
-/**
-* Print all Labels in the authorized user's inbox. If no labels
-* are found an appropriate message is printed.
-*/
-function listLabels() {
-  var request = gapi.client.gmail.users.labels.list({
-    'userId': 'me'
-  });
-
-  request.execute(function(resp) {
-    var labels = resp.labels;
-    appendPre('Labels:');
-
-    if (labels && labels.length > 0) {
-      for (i = 0; i < labels.length; i++) {
-        var label = labels[i];
-        appendPre(label.name);
-      }
-    } else {
-      appendPre('No Labels found.');
-    }
-  });
-}
-
-/**
-* Append a pre element to the body containing the given message
-* as its text node.
-*
-* @param {string} message Text to be placed in pre element.
-*/
-function appendPre(message) {
-  var pre = document.getElementById('output');
-  var textContent = document.createTextNode(message + '\n');
-  pre.appendChild(textContent);
-}
+/*listMessage is decleared in api.js*/

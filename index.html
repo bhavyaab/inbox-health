@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Inbox Health | Keep Your G-Mail Clean</title>
-    <script type="text/javascript" src="scripts/controller/api.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 
   </head>
@@ -21,7 +20,7 @@
     <section>
       <p>Data</p>
     </section>
-    <div id="authorize-div" style="display: none">
+    <div id="authorize-div" style="display: block">
       <span>Authorize access to Gmail API</span>
       <!--Button for the user to click to initiate auth sequence -->
       <button id="authorize-button" onclick="handleAuthClick(event)">
@@ -30,5 +29,10 @@
     </div>
     <pre id="output"></pre>
   </body>
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+  <script type="text/javascript" src="scripts/controller/auth.js"></script>
+  <script type="text/javascript" src="scripts/controller/getMessage.js"></script>
+  <script type="text/javascript" src="scripts/controller/listMessage.js"></script>
   <script src="scripts/controller/userInput.js"></script>
+  <!-- <script type="text/javascript" src="scripts/controller/userOutput.js"></script> -->
   </html>
