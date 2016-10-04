@@ -20,23 +20,55 @@ function getMessage(userId, messageId) { //eslint-disable-line
 }
 
 function noSubscribeHeader(currMessage) {
-  var raw = currMessage.payload.parts[1].body.data.split(/[-_]/);
-  var newString = raw.reduce(function(acc, next) {
-    return acc + (atob(next));
-  }, '');
-  var unsubscribePosition = newString.search('unsubscribe');
-  if (unsubscribePosition === -1) {
-    unsubscribePosition = newString.search('opt out');
-  }
-  var linkString = newString.slice((unsubscribePosition - 550), unsubscribePosition);
-  var allHrefs = linkString.split('href="');
-  var link;
-  if (allHrefs.length === 1) {
-    linkString = newString.slice(unsubscribePosition, (unsubscribePosition + 550));
-    allHrefs = linkString.split('href="');
-    link = allHrefs[1].split('"')[0];
+  var raw;
+  if (currMessage.payload.parts) {
+    if (currMessage.payload.parts.length > 1) {
+      if (currMessage.payload.parts[1].body.data) {
+        raw = currMessage.payload.parts[1].body.data.split(/[-_]/);
+      }
+    } else {
+      if (currMessage.payload.parts[0].parts) {
+        raw = currMessage.payload.parts[0].parts[1].body.data.split(/[-_]/);
+      }
+    }
   } else {
-    link = allHrefs[allHrefs.length - 1].split('"')[0];
+    raw = currMessage.payload.body.data.split(/[-_]/);
+  }
+  if (raw) {
+    var newString = raw.reduce(function(acc, next) {
+      try {
+        return acc + (atob(next));
+      }
+      catch(e) {
+      }
+    }, '');
+    var unsubscribePosition = newString.search('unsubscribe');
+    if (unsubscribePosition === -1) {
+      unsubscribePosition = newString.search('opt out');
+    }
+    var cutTo;
+    if (unsubscribePosition - 1200 < 0) {
+      cutTo = 0;
+    } else {
+      cutTo = unsubscribePosition - 1200;
+    }
+    var linkString = newString.slice(cutTo, unsubscribePosition);
+    var allHrefs = linkString.split('href="');
+    var link;
+    if (allHrefs.length === 1) {
+      if (unsubscribePosition + 1200 > newString.length) {
+        cutTo = newString.length - 1;
+      } else {
+        cutTo = unsubscribePosition + 1200;
+      }
+      linkString = newString.slice(unsubscribePosition, cutTo);
+      allHrefs = linkString.split('href="');
+      if (allHrefs.length !== 1) {
+        link = allHrefs[1].split('"')[0];
+      }
+    } else {
+      link = allHrefs[allHrefs.length - 1].split('"')[0];
+    }
   }
   return link;
 }
