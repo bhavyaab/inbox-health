@@ -21,24 +21,25 @@ function listMessages(me, query){ //eslint-disable-line
     request.execute(function(resp) {
       result = result.concat(resp.messages);
       var nextPageToken = resp.nextPageToken;
-      if (nextPageToken) {
+      if (nextPageToken && (result.length < 2000)) {
         request = gapi.client.gmail.users.messages.list({
           'userId': 'me',
           'pageToken': nextPageToken,
-          'q':'unsubscribe'
+          'q': 'unsubscribe' || 'Unsubscribe' || 'opt out',
+          'maxResults': 2000
         });
         getPageOfMessages(request, result);
-      } else {
-        resp.messages.forEach(function(item){
-          resultId.push(item);
-          getMessage(me, item.id);
-        });
       }
+      resp.messages.forEach(function(item){
+        resultId.push(item);
+        getMessage(me, item.id);  //it will go to getmessage.js page
+      });
     });
   };
   var initialRequest = gapi.client.gmail.users.messages.list({
     'userId': 'me',
-    'q':'unsubscribe'
+    'q':'unsubscribe' || 'Unsubscribe' || 'opt out',
+    'maxResults': 2000
   });
   getPageOfMessages(initialRequest,[]);
 }

@@ -1,3 +1,4 @@
+/*5*/
 var message = [];
 var requireInfo = [];
 function getInfo(from, unsubscribe){
@@ -20,7 +21,7 @@ function getMessage(userId, messageId) { //eslint-disable-line
   });
   request.execute(function(resp) {
     message.push(resp);
-    requireInfo.push(new getInfo(resp.payload.headers[13], resp.payload.headers[17]));
+    generateInfo(resp);
   });
   // callback();
 }
