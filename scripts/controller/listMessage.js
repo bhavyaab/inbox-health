@@ -15,8 +15,7 @@ var resultId = [];
  4.includeSpamTrash is passed true for including trash and spam folder.
  5.q has assigned value for filterout messages which has  'unsubscribe, safeunsubscribe'.
  */
-// var query ='unsubscribe, Unsubscribe, opt out, #op out';
-function listMessages(me, query){
+function listMessages(me, query){ //eslint-disable-line
   var getPageOfMessages = function(request, result) {
     request.execute(function(resp) {
       result = result.concat(resp.messages);
