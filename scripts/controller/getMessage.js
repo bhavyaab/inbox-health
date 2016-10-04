@@ -1,6 +1,5 @@
 /*5*/
 var message = [];
-var count = 0;
 /**
  * Get Message with given ID.
  *
