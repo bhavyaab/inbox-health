@@ -1,0 +1,48 @@
+/* LAYOUT STYLES
+========================= */
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* --- About Layout --- */
+
+.spacing-bar {
+  width: 100%;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Unsubscribe List Layout --- */
+
+.letter {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  border: 1px solid #000;
+}
+
+.name-container {
+  padding: 20px;
+}
+
+.name-container p {
+  display: inline;
+}
+
+.unsub-container {
+  padding: 10px;
+}
