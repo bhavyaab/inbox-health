@@ -25,7 +25,7 @@ function listMessages(me, query){
         request = gapi.client.gmail.users.messages.list({
           'userId': 'me',
           'pageToken': nextPageToken,
-          'q': 'unsubscribe, Unsubscribe, opt out, #op out',
+          'q':'unsubscribe'
         });
         getPageOfMessages(request, result);
       } else {
@@ -38,7 +38,7 @@ function listMessages(me, query){
   };
   var initialRequest = gapi.client.gmail.users.messages.list({
     'userId': 'me',
-    'q':'unsubscribe, Unsubscribe, opt out, #op out',
+    'q':'unsubscribe'
   });
   getPageOfMessages(initialRequest,[]);
 }
