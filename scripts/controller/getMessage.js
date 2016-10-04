@@ -1,10 +1,6 @@
 /*5*/
 var message = [];
-var requireInfo = [];
-function getInfo(from, unsubscribe){
-  this.from = from;
-  this.unsubscribe = unsubscribe;
-};
+var count = 0;
 /**
  * Get Message with given ID.
  *
