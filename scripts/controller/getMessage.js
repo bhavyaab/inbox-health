@@ -25,11 +25,14 @@ function noSubscribeHeader(currMessage) {
     return acc + (atob(next));
   }, '');
   var unsubscribePosition = newString.search('unsubscribe');
+  if (unsubscribePosition === -1) {
+    unsubscribePosition = newString.search('opt out');
+  }
   var linkString = newString.slice((unsubscribePosition - 550), unsubscribePosition);
   var allHrefs = linkString.split('href="');
   var link;
   if (allHrefs.length === 1) {
-    linkString = newString.slice(unsubscribePosition, (unsubscribePosition + 20));
+    linkString = newString.slice(unsubscribePosition, (unsubscribePosition + 550));
     allHrefs = linkString.split('href="');
     link = allHrefs[1].split('"')[0];
   } else {
