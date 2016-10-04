@@ -1,6 +1,5 @@
 /*5*/
 var message = [];
-var count = 0;
 /**
  * Get Message with given ID.
  *
@@ -9,7 +8,6 @@ var count = 0;
  * @param  {String} messageId ID of Message to get.
  * @param  {Function} callback Function to call when the request is complete.
  */
- // var callback = function(){console.log(message);};
 function getMessage(userId, messageId) { //eslint-disable-line
   var request = gapi.client.gmail.users.messages.get({
     'userId': 'me',
@@ -19,7 +17,6 @@ function getMessage(userId, messageId) { //eslint-disable-line
     message.push(resp);
     generateInfo(resp);
   });
-  // callback();
 }
 
 function noSubscribeHeader(currMessage) {
@@ -30,7 +27,7 @@ function noSubscribeHeader(currMessage) {
   var unsubscribePosition = newString.search('unsubscribe');
   var linkString = newString.slice((unsubscribePosition - 550), unsubscribePosition);
   var allHrefs = linkString.split('href="');
-  var link;
+  var link; //eslint-disable-line
   if (allHrefs.length === 1) {
     linkString = newString.slice(unsubscribePosition, (unsubscribePosition + 20));
     allHrefs = linkString.split('href="');
