@@ -1,4 +1,5 @@
 /*6*/
+var allInfo = [];
 var requireInfo = [];
 function GetInfo(id, from, unsubscribe){
   this.id = id;
