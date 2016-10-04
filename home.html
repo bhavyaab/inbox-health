@@ -9,6 +9,20 @@
     <link href="styles/modules.css" rel="stylesheet">
     <link href="styles/icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <script id="unsubscribe-template" type="text/x-handlebars-template">
+      <ul>
+        <li>
+          <div class="flex-container">
+            <div class="name-container">
+              <p>{{Company Name}}</p> <a href="{{Company URL}}">{{Company URL}}</a>
+            </div> <!-- name-container -->
+            <div class="unsub-container">
+              <span class="icon-cross"><a href="{{Unsubscribe Link}}">Unsubscribe</a></span>
+            </div> <!-- .unsub-container -->
+          </div> <!-- .flex-container -->
+        </li>
+      </ul>
+    </script>
   </head>
 
   <!-- //HEADER// -->
@@ -29,7 +43,7 @@
           <div class="text-box">
             <h1>WELCOME TO INBOX HEALTH</h1>
             <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-            <a href ="sign.html"><button>SIGN IN ></button></a>
+            <a href ="sign.html"><button id="authorize-button" onclick="handleAuthClick(event)">SIGN IN ></button></a>
           </div>
         </div>
 <!-- //UNSUBSCRIBE PAGE// -->
@@ -117,6 +131,6 @@
       <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3>
 
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
   </body>
 </html>
