@@ -1,6 +1,17 @@
 /* MODULE STYLES
 ========================= */
+/* main nav */
+#main-nav li a {
+  color: black;
+}
+#main-nav li a:hover {
+  color: #c71610;
+}
 
+
+.tab-content {
+  display: none;
+}
 /* --- About Layout --- */
 
 h2 {
