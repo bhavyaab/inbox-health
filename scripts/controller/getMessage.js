@@ -27,7 +27,7 @@ function noSubscribeHeader(currMessage) {
   var unsubscribePosition = newString.search('unsubscribe');
   var linkString = newString.slice((unsubscribePosition - 550), unsubscribePosition);
   var allHrefs = linkString.split('href="');
-  var link; //eslint-disable-line
+  var link;
   if (allHrefs.length === 1) {
     linkString = newString.slice(unsubscribePosition, (unsubscribePosition + 20));
     allHrefs = linkString.split('href="');
@@ -35,4 +35,5 @@ function noSubscribeHeader(currMessage) {
   } else {
     link = allHrefs[allHrefs.length - 1].split('"')[0];
   }
+  return link;
 }
