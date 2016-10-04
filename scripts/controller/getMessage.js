@@ -1,9 +1,6 @@
+/*5*/
 var message = [];
-var requireInfo = [];
-function getInfo(from, unsubscribe){
-  this.form = from;
-  this.unsubscribe = unsubscribe;
-};
+var count = 0;
 /**
  * Get Message with given ID.
  *
@@ -20,7 +17,7 @@ function getMessage(userId, messageId) {
   });
   request.execute(function(resp) {
     message.push(resp);
-    requireInfo.push(new getInfo(resp.payload.headers[13], resp.payload.headers[17]));
+    generateInfo(resp);
   });
   // callback();
 }
