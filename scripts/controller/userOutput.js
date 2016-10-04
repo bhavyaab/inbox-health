@@ -1,10 +1,11 @@
 /*6*/
 var allInfo = [];
 var requireInfo = [];
-function GetInfo(id, from, unsubscribe){
+function GetInfo(id, from, unsubscribe,name){
   this.id = id;
   this.from = from;
   this.unsubscribe = unsubscribe;
+  this.name = name;
 };
 
 var generateInfo = function(resp){
@@ -22,6 +23,8 @@ var generateInfo = function(resp){
     unsubscribe = noSubscribeHeader(resp);
   } else {
     unsubscribe = unsubscribe.value;
-  }
-  requireInfo.push(new GetInfo(id, from, unsubscribe));
+  };
+  var name = from.split('@')[1].split('.');
+  name = (from.split('@')[1].split('.'))[name.length - 2];
+  requireInfo.push(new GetInfo(id, from, unsubscribe, name));
 };

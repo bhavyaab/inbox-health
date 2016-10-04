@@ -20,12 +20,11 @@ function listMessages(me, query){ //eslint-disable-line
     request.execute(function(resp) {
       result = result.concat(resp.messages);
       var nextPageToken = resp.nextPageToken;
-      if (nextPageToken && (result.length < 2000)) {
+      if (nextPageToken && (result.length < 200)) {
         request = gapi.client.gmail.users.messages.list({
           'userId': 'me',
           'pageToken': nextPageToken,
           'q': 'unsubscribe' || 'Unsubscribe' || 'opt out',
-          'maxResults': 2000
         });
         getPageOfMessages(request, result);
       }
@@ -38,7 +37,6 @@ function listMessages(me, query){ //eslint-disable-line
   var initialRequest = gapi.client.gmail.users.messages.list({
     'userId': 'me',
     'q':'unsubscribe' || 'Unsubscribe' || 'opt out',
-    'maxResults': 2000
   });
   getPageOfMessages(initialRequest,[]);
 }
