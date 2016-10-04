@@ -25,13 +25,20 @@ function getMessage(userId, messageId) { //eslint-disable-line
   // callback();
 }
 
-function noSubscribeHeader() {
-  var raw = message[0].payload.parts[1].body.data.split(/[-_]/);
-  var newString = '';
-  for (var i = 0; i < raw.length; i++) {
-    newString = newString.concat(atob(raw[i]));
+function noSubscribeHeader(currMessage) {
+  var raw = currMessage.payload.parts[1].body.data.split(/[-_]/);
+  var newString = raw.reduce(function(acc, next) {
+    return acc + (atob(next));
+  }, '');
+  var unsubscribePosition = newString.search('unsubscribe');
+  var linkString = newString.slice((unsubscribePosition - 550), unsubscribePosition);
+  var allHrefs = linkString.split('href="');
+  var link;
+  if (allHrefs.length === 1) {
+    linkString = newString.slice(unsubscribePosition, (unsubscribePosition + 20));
+    allHrefs = linkString.split('href="');
+    link = allHrefs[1].split('"')[0];
+  } else {
+    link = allHrefs[allHrefs.length - 1].split('"')[0];
   }
-  var foundUnsubscribe = newString.search('unsubscribe');
-  var linkString = newString.slice((foundUnsubscribe - 550), foundUnsubscribe);
-  var link = linkString.split('href="')[1].split('"')[0];
 }
