@@ -14,10 +14,10 @@
         <li>
           <div class="flex-container">
             <div class="name-container">
-              <p>{{Company Name}}</p> <a href="{{Company URL}}">{{Company URL}}</a>
+              <p>{{senderName}}</p>
             </div> <!-- name-container -->
             <div class="unsub-container">
-              <span class="icon-cross"><a href="{{Unsubscribe Link}}">Unsubscribe</a></span>
+              <span class="icon-cross"><a href="{{unsubscribe}}" target="_blank">Unsubscribe</a></span>
             </div> <!-- .unsub-container -->
           </div> <!-- .flex-container -->
         </li>
@@ -26,20 +26,23 @@
   </head>
 
   <!-- //HEADER// -->
-    <header>
+  <header>
+    <div id="logos">
       <a href="/"><img src="img/fullLogo.png" id="fullLogo"></a>
       <a href="/"><img src="img/mobile.png" id="mobileLogo"></a>
+    </div>
+    <nav>
       <ul id="main-nav">
         <li id="authorize-button" onclick="handleAuthClick(event)">Get Started!</li>
         <li class="full-nav"><a href="/about">About</a></li>
         <li class="full-nav"><a href="/" id="home-click">Home</a></li>
       </ul>
-
-    </header>
-  <body>
+    </nav>
+  </header>
   <!-- //CONTENT// -->
-  <main>
-    <section id="home-content" class="tab-content">
+  <body>
+    <main>
+      <section id="home-content" class="tab-content">
         <div class="containerBox">
           <div class="text-box">
             <h1>WELCOME TO INBOX HEALTH</h1>
@@ -49,12 +52,11 @@
         </div>
       </section>
 <!-- //UNSUBSCRIBE PAGE// -->
-<section id="unsubscribe-page" class="tab-content">
+      <section id="unsubscribe-page" class="tab-content">
         <ul>
           <li id="subscription-list-template">
             <!-- SUBSCRIPTION LIST -->
           </li>
-
           <li>
             <div class="flex-container">
               <div class="name-container">
