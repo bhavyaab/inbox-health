@@ -48,4 +48,5 @@ var generateInfo = function(resp){ //eslint-disable-line
     requireInfo.push(new GetInfo(id, from, unsubscribe, senderName));
   };
   getUniqueSenders();
+  appendUnsubscribe();
 };
