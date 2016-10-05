@@ -1,5 +1,4 @@
 /*6*/
-var allInfo = []; //eslint-disable-line
 var requireInfo = [];
 function GetInfo(id, from, unsubscribe,senderName){
   this.id = id;
