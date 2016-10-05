@@ -20,7 +20,7 @@ function listMessages(me, query){ //eslint-disable-line
     request.execute(function(resp) {
       result = result.concat(resp.messages);
       var nextPageToken = resp.nextPageToken;
-      if (nextPageToken && (result.length < 200)) {
+      if (nextPageToken && (result.length < 100)) {
         request = gapi.client.gmail.users.messages.list({
           'userId': 'me',
           'pageToken': nextPageToken,
