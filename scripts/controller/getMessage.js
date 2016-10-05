@@ -24,15 +24,27 @@ function noSubscribeHeader(currMessage) {
   if (currMessage.payload.parts) {
     if (currMessage.payload.parts.length > 1) {
       if (currMessage.payload.parts[1].body.data) {
-        raw = currMessage.payload.parts[1].body.data.split(/[-_]/);
+        try {
+          raw = currMessage.payload.parts[1].body.data.split(/[-_]/);
+        }
+        catch(e) {
+        }
       }
     } else {
       if (currMessage.payload.parts[0].parts) {
-        raw = currMessage.payload.parts[0].parts[1].body.data.split(/[-_]/);
+        try {
+          raw = currMessage.payload.parts[0].parts[1].body.data.split(/[-_]/);
+        }
+        catch(e) {
+        }
       }
     }
   } else {
-    raw = currMessage.payload.body.data.split(/[-_]/);
+    try {
+      raw = currMessage.payload.body.data.split(/[-_]/);
+    }
+    catch(e) {
+    }
   }
   if (raw) {
     var newString = raw.reduce(function(acc, next) {
