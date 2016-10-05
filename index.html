@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,7 @@
               <p>{{senderName}}</p>
             </div> <!-- name-container -->
             <div class="unsub-container">
-              <span class="icon-cross"><a href="{{unsubscribe}}" target="_blank">Unsubscribe</a></span>
+              <a href="{{unsubscribe}}" target="_blank"><span class="icon-cross">Unsubscribe</span></a>
             </div> <!-- .unsub-container -->
           </div> <!-- .flex-container -->
         </li>
@@ -48,51 +49,13 @@
           <div class="text-box">
             <h1>WELCOME TO INBOX HEALTH</h1>
             <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-            <a href ="sign.html"><button id="authorize-button" onclick="handleAuthClick(event)">SIGN IN ></button></a>
+            <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="handleAuthClick(event)">SIGN IN ></button></a></div>
           </div>
         </div>
       </section>
 <!-- //UNSUBSCRIBE PAGE// -->
       <section id="unsubscribe-page" class="tab-content">
-        <ul>
-          <li id="subscription-list-template">
-            <!-- SUBSCRIPTION LIST -->
-          </li>
-          <li>
-            <div class="flex-container">
-              <div class="name-container">
-                <p>Code Fellows</p> <a href="#">codefellows.org</a>
-              </div> <!-- name-container -->
-              <div class="unsub-container">
-                <span class="icon-cross"><a href="#">Unsubscribe</a></span>
-              </div> <!-- .unsub-container -->
-            </div> <!-- .flex-container -->
-            <div class="flex-container">
-              <div class="name-container">
-                <p>Code Fellows</p> <a href="#">codefellows.org</a>
-              </div> <!-- name-container -->
-              <div class="unsub-container">
-                <span class="icon-cross"><a href="#">Unsubscribe</a></span>
-              </div> <!-- .unsub-container -->
-            </div> <!-- .flex-container -->
-            <div class="flex-container">
-              <div class="name-container">
-                <p>Code Fellows</p> <a href="#">codefellows.org</a>
-              </div> <!-- name-container -->
-              <div class="unsub-container">
-                <span class="icon-cross"><a href="#">Unsubscribe</a></span>
-              </div> <!-- .unsub-container -->
-            </div> <!-- .flex-container -->
-            <div class="flex-container">
-              <div class="name-container">
-                <p>Code Fellows</p> <a href="#">codefellows.org</a>
-              </div> <!-- name-container -->
-              <div class="unsub-container">
-                <span class="icon-cross"><a href="#">Unsubscribe</a></span>
-              </div> <!-- .unsub-container -->
-            </div> <!-- .flex-container -->
-          </li>
-        </ul>
+<!-- //UNSUBSCRIBE LIST// -->
       </section>
 <!-- //ABOUT PAGE// -->
 <div id="about-page" class="tab-content">
@@ -138,19 +101,23 @@
       <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3>
 
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="scripts/views/unsubscribeView.js"></script>
+  <!-- //VENDOR FILES// -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="vendor/scripts/page.js"></script>
+  <!-- //MODEL FILES// -->
+  <!-- //VIEW FILES// -->
+  <script src="scripts/views/homeView.js"></script>
+  <!-- //CONTROLLER FILES// -->
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/unsubscribeController.js"></script>
     <script src="scripts/controller/routes.js"></script>
-    <script src="scripts/views/homeView.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/getMessage.js"></script>
     <script type="text/javascript" src="scripts/controller/listMessage.js"></script>
     <script src="scripts/controller/userInput.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
+    <script src="scripts/views/unsubscribeView.js"></script>
   </body>
 </html>

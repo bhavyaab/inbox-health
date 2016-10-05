@@ -1,5 +1,5 @@
 /*6*/
-var allInfo = [];
+var allInfo = []; //eslint-disable-line
 var requireInfo = [];
 function GetInfo(id, from, unsubscribe,senderName){
   this.id = id;
@@ -18,7 +18,7 @@ var getUniqueSenders = function(){
     };});
 };
 
-var generateInfo = function(resp){
+var generateInfo = function(resp){ //eslint-disable-line
   var id = resp.id;
   var from = resp.payload.headers.reduce(function(curr, next) {
     if (next.name === 'From' || next.name === 'sender') {

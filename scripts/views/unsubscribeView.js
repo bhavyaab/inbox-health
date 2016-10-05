@@ -1,12 +1,13 @@
-var emails = {}; //eslint-disable-line
 
-function Unsubscribe(emails) { //eslint-disable-line
-  this.company = emails.company;
-  this.url = emails.url;
+
+function appendUnsubscribe() { //eslint-disable-line
+  unique.forEach(function(obj) {
+    $('#unsubscribe-page').append(obj.toHtml());
+  });
 }
 
-Unsubscribe.prototype.toHtml = function() {
-  var source = $('#unsubscribe-template').html();
-  var template = Handlebars.compile(source);
+//take getInfo objects and turn into unsubscribe objects
+GetInfo.prototype.toHtml = function() {
+  var template = Handlebars.compile($('#unsubscribe-template').html());
   return template(this);
 };
