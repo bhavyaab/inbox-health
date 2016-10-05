@@ -16,5 +16,6 @@ function getMessage(messageId) {
   request.execute(function(resp) {
     message.push(resp);
     generateInfo(resp);
+
   });
 };
