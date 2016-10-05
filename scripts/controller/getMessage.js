@@ -8,7 +8,7 @@ var message = [];
  * @param  {String} messageId ID of Message to get.
  * @param  {Function} callback Function to call when the request is complete.
  */
-function getMessage(messageId) { //eslint-disable-line
+function getMessage(userId, messageId) { //eslint-disable-line
   var request = gapi.client.gmail.users.messages.get({
     'userId': 'me',
     'id': messageId
@@ -16,6 +16,7 @@ function getMessage(messageId) { //eslint-disable-line
   request.execute(function(resp) {
     message.push(resp);
     generateInfo(resp);
+
   });
 };
 

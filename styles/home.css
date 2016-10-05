@@ -1,6 +1,30 @@
 
 /*//HEADER//*/
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+nav li {
+  margin-right: 20px;
+}
+nav li:last-child {
+  margin-right: 0px;
+}
+header img {
+  height: 60px;
+  width: 200px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+/*header {
   height: 100px;
   width: 100%;
   margin-bottom: 75px;
@@ -29,7 +53,7 @@ header img {
 }
 .clearfix {
   clear: both;
-}
+}*/
 /*//BODY//*/
 
 .containerBox {
