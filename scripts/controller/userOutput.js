@@ -93,11 +93,7 @@ var generateInfo = function(resp){ //eslint-disable-line
       unsubscribe = (unsubscribe.split('<')[1]).split('>')[0];
     };
   };
-  var possibleSenderName = from.split('@')[1].split('.');
-  senderName = (from.split('@')[1].split('.'))[possibleSenderName.length - 2];
-  if(senderName.length < 3){
-    senderName = (from.split('@')[1].split('.'))[possibleSenderName.length - 3];
-  };
+  senderName = from.split('<')[0];
   if(from.includes('<')){
     from = (from.split('<')[1]).split('>')[0];
   };
