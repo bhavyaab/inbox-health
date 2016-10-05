@@ -1,5 +1,5 @@
 /*6*/
-var allInfo = [];
+var allInfo = []; //eslint-disable-line
 var requireInfo = [];
 function GetInfo(id, from, unsubscribe,senderName){
   this.id = id;
@@ -15,10 +15,11 @@ var getUniqueSenders = function(){
     else{
       lookUpTable[item.senderName] = true;
       unique.push(item);
-    };});
+    };
+  });
 };
 
-var generateInfo = function(resp){
+var generateInfo = function(resp){ //eslint-disable-line
   var id = resp.id;
   var from = resp.payload.headers.reduce(function(curr, next) {
     if (next.name === 'From' || next.name === 'sender') {
@@ -26,20 +27,26 @@ var generateInfo = function(resp){
     }
     return curr;
   },[])[0];
-  var unsubscribe = resp.payload.headers.find(function(itemH) {
+  var unsubscribe = resp.payload.headers.filter(function(itemH) {
     return itemH.name === 'List-Unsubscribe';
-  });
+  })[0];
   if (!unsubscribe) {
     unsubscribe = noSubscribeHeader(resp);
   } else {
     unsubscribe = unsubscribe.value;
+    if(unsubscribe.includes('<')){
+      unsubscribe = (unsubscribe.split('<')[1]).split('>')[0];
+    };
   };
-  var senderName = from.split('@')[1].split('.');
-  senderName = (from.split('@')[1].split('.'))[senderName.length - 2];
+  var possibleSenderName = from.split('@')[1].split('.');
+  senderName = (from.split('@')[1].split('.'))[possibleSenderName.length - 2];
+  if(senderName.length < 3){
+    senderName = (from.split('@')[1].split('.'))[possibleSenderName.length - 3];
+  };
   from = (from.split('<')[1]).split('>')[0];
   if(unsubscribe){
-    unsubscribe = (unsubscribe.split('<')[1]).split('>')[0];
+    requireInfo.push(new GetInfo(id, from, unsubscribe, senderName));
   };
-  requireInfo.push(new GetInfo(id, from, unsubscribe, senderName));
   getUniqueSenders();
+  appendUnsubscribe();
 };

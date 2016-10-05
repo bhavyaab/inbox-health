@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Send Message.
  *
@@ -18,4 +19,8 @@ function sendMessage(userId, unsubscribe, callback) {
     }
   });
   request.execute(callback);
+=======
+function unsubscribeLink() {
+if 
+>>>>>>> b00d63b5e9ee32315f4aaa75a1a3803789e09a88
 }
