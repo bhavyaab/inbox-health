@@ -1,6 +1,7 @@
 
 
 function appendUnsubscribe() { //eslint-disable-line
+  console.log('weasel');
   unique.forEach(function(obj) {
     $('#unsubscribe-page').append(obj.toHtml());
   });
