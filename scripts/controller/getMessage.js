@@ -8,7 +8,11 @@ var message = [];
  * @param  {String} messageId ID of Message to get.
  * @param  {Function} callback Function to call when the request is complete.
  */
+<<<<<<< HEAD
 function getMessage(userId, messageId) { //eslint-disable-line
+=======
+function getMessage(messageId) {
+>>>>>>> f72e0ee057ad7ed669b83320bd81cdcf140a7090
   var request = gapi.client.gmail.users.messages.get({
     'userId': 'me',
     'id': messageId
@@ -19,69 +23,3 @@ function getMessage(userId, messageId) { //eslint-disable-line
 
   });
 };
-
-function noSubscribeHeader(currMessage) {
-  var raw;
-  if (currMessage.payload.parts) {
-    if (currMessage.payload.parts.length > 1) {
-      if (currMessage.payload.parts[1].body.data) {
-        try {
-          raw = currMessage.payload.parts[1].body.data.split(/[-_]/);
-        }
-        catch(e) {
-        }
-      }
-    } else {
-      if (currMessage.payload.parts[0].parts) {
-        try {
-          raw = currMessage.payload.parts[0].parts[1].body.data.split(/[-_]/);
-        }
-        catch(e) {
-        }
-      }
-    }
-  } else {
-    try {
-      raw = currMessage.payload.body.data.split(/[-_]/);
-    }
-    catch(e) {
-    }
-  }
-  if (raw) {
-    var newString = raw.reduce(function(acc, next) {
-      try {
-        return acc + (atob(next));
-      }
-      catch(e) {
-      }
-    }, '');
-    var unsubscribePosition = newString.search('unsubscribe');
-    if (unsubscribePosition === -1) {
-      unsubscribePosition = newString.search('opt out');
-    }
-    var cutTo;
-    if (unsubscribePosition - 1200 < 0) {
-      cutTo = 0;
-    } else {
-      cutTo = unsubscribePosition - 1200;
-    }
-    var linkString = newString.slice(cutTo, unsubscribePosition);
-    var allHrefs = linkString.split('href="');
-    var link;
-    if (allHrefs.length === 1) {
-      if (unsubscribePosition + 1200 > newString.length) {
-        cutTo = newString.length - 1;
-      } else {
-        cutTo = unsubscribePosition + 1200;
-      }
-      linkString = newString.slice(unsubscribePosition, cutTo);
-      allHrefs = linkString.split('href="');
-      if (allHrefs.length !== 1) {
-        link = allHrefs[1].split('"')[0];
-      }
-    } else {
-      link = allHrefs[allHrefs.length - 1].split('"')[0];
-    }
-  }
-  return link;
-}
