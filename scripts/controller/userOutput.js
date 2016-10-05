@@ -43,10 +43,11 @@ var generateInfo = function(resp){ //eslint-disable-line
   if(senderName.length < 3){
     senderName = (from.split('@')[1].split('.'))[possibleSenderName.length - 3];
   };
-  from = (from.split('<')[1]).split('>')[0];
+  if(from.includes('<')){
+    from = (from.split('<')[1]).split('>')[0];
+  };
   if(unsubscribe){
     requireInfo.push(new GetInfo(id, from, unsubscribe, senderName));
   };
   getUniqueSenders();
-  appendUnsubscribe();
 };

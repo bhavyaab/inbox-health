@@ -1,4 +1,3 @@
-//TODO: hide clint_ID and SCOPE ie add proxy.
 var CLIENT_ID = '177098992391-62qc3rb4ovmlss7vtko4e280pgj6p8pp.apps.googleusercontent.com';
 
 var SCOPES = ['https://www.googleapis.com/auth/gmail.modify'];
@@ -51,6 +50,5 @@ function handleAuthClick(event) {
 */
 function loadGmailApi() {
   gapi.client.load('gmail', 'v1', listMessages);
-  // gapi.client.load('gmail', 'v1', getMessage);
 }
 /*listMessage is decleared in api.js*/
