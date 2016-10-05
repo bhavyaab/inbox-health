@@ -1,5 +1,5 @@
 /*6*/
-var requireInfo = [];
+// var requireInfo = [];
 function GetInfo(id, from, unsubscribe,senderName){
   this.id = id;
   this.from = from;
@@ -8,16 +8,6 @@ function GetInfo(id, from, unsubscribe,senderName){
 };
 var unique = [];
 var lookUpTable = {};
-var getUniqueSenders = function(){
-  requireInfo.forEach(function(item){
-    if(lookUpTable.hasOwnProperty(item.senderName)){}
-    else{
-      lookUpTable[item.senderName] = true;
-      unique.push(item);
-    };
-  });
-};
-
 var generateInfo = function(resp){ //eslint-disable-line
   var id = resp.id;
   var from = resp.payload.headers.reduce(function(curr, next) {
@@ -46,7 +36,10 @@ var generateInfo = function(resp){ //eslint-disable-line
     from = (from.split('<')[1]).split('>')[0];
   };
   if(unsubscribe){
-    requireInfo.push(new GetInfo(id, from, unsubscribe, senderName));
+    if(lookUpTable.hasOwnProperty(senderName)){}
+    else{
+      lookUpTable[senderName] = true;
+      unique.push(new GetInfo(id, from, unsubscribe, senderName));
+    };
   };
-  getUniqueSenders();
 };
