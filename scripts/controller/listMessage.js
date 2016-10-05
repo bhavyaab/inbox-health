@@ -15,7 +15,7 @@ var resultId = [];
  4.includeSpamTrash is passed true for including trash and spam folder.
  5.q has assigned value for filterout messages which has  'unsubscribe, safeunsubscribe'.
  */
-function listMessages(me, query, getUniqueSenders){ //eslint-disable-line
+function listMessages(me, query){ //eslint-disable-line
   var getPageOfMessages = function(request, result) {
     request.execute(function(resp) {
       result = result.concat(resp.messages);
@@ -39,5 +39,4 @@ function listMessages(me, query, getUniqueSenders){ //eslint-disable-line
     'q':'unsubscribe' || 'Unsubscribe' || 'opt out',
   });
   getPageOfMessages(initialRequest,[]);
-  getUniqueSenders();
 }

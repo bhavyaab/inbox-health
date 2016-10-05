@@ -17,7 +17,7 @@ function getMessage(userId, messageId) { //eslint-disable-line
     message.push(resp);
     generateInfo(resp);
   });
-}
+};
 
 function noSubscribeHeader(currMessage) {
   var raw;
