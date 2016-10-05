@@ -19,7 +19,7 @@ h2 {
   font-size: 2em;
   font-weight: 700;
   padding: 20px;
-  
+
 }
 
 .about-bio {
@@ -136,6 +136,16 @@ h2 {
     flex-direction: row;
     justify-content: space-between;;
     align-items: center;
+  }
+
+  .name-container {
+    width: 50%;
+  }
+
+  .unsub-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
   }
 
 }
