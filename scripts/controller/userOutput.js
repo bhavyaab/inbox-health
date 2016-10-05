@@ -6,7 +6,7 @@ function GetInfo(id, from, unsubscribe,senderName){
   this.unsubscribe = unsubscribe;
   this.senderName = senderName;
 };
-var unique = [];
+
 var lookUpTable = {};
 function noSubscribeHeader(currMessage) {
   var raw;
@@ -73,6 +73,7 @@ function noSubscribeHeader(currMessage) {
   }
   return link;
 };
+
 var generateInfo = function(resp){ //eslint-disable-line
   var id = resp.id;
   var from = resp.payload.headers.reduce(function(curr, next) {
@@ -104,7 +105,9 @@ var generateInfo = function(resp){ //eslint-disable-line
     if(lookUpTable.hasOwnProperty(senderName)){}
     else{
       lookUpTable[senderName] = true;
-      unique.push(new GetInfo(id, from, unsubscribe, senderName));
+      var template = Handlebars.compile($('#unsubscribe-template').html());
+      var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
+      $('#unsubscribe-page').append(template(uniqueObj));
     };
   };
 };
