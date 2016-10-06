@@ -10,9 +10,9 @@ function createTable() {
 var createEmail = function() {
   webDB.execute([{
     'sql': 'INSERT INTO emails ' +
-    '(senderName, unsubscribe) ' +
-    'VALUES (?, ?);',
-    'data': [this.senderName, this.unsubscribe]
+    '(mailId, from, senderName, unsubscribe) ' +
+    'VALUES (?, ?, ?, ?);',
+    'data': [this.mailId, this.from, this.senderName, this.unsubscribe]
   }]);
 };
 
@@ -39,3 +39,6 @@ function getUniqueSenders() {
     }
   );
 }
+
+createTable();
+getUniqueSenders();
