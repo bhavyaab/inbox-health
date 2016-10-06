@@ -1,7 +1,7 @@
 /*6*/
 // var requireInfo = [];
 function GetInfo(id, from, unsubscribe,senderName){
-  this.id = id;
+  this.mailId = id;
   this.from = from;
   this.unsubscribe = unsubscribe;
   this.senderName = senderName;
@@ -103,6 +103,7 @@ var generateInfo = function(resp){ //eslint-disable-line
       lookUpTable[senderName] = true;
       var template = Handlebars.compile($('#unsubscribe-template').html());
       var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
+      createEmail(uniqueObj);
       $('#unsubscribe-page').append(template(uniqueObj));
     };
   };

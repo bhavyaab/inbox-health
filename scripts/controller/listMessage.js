@@ -1,4 +1,3 @@
-var resultId = [];
 /**
  * Retrieve Messages in user's mailbox matching query.
  *
@@ -27,10 +26,9 @@ function listMessages(me, query){ //eslint-disable-line
           'q': 'unsubscribe' || 'Unsubscribe' || 'opt out',
         });
         getPageOfMessages(request, result);
-      } ;
-      resp.messages.forEach(function(item){
-        resultId.push(item);
-        getMessage(me, item.id);  //it will go to getmessage.js page
+      };
+      result.forEach(function(item){
+        getMessage(item.id);  //it will go to getmessage.js page
       });
     });
   };
