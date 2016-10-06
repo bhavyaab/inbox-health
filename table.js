@@ -25,17 +25,25 @@ var deleteEmail = function(obj) {
   }]);
 };
 
+function signOut() {
+  webDB.execute('DROP TABLE emails');
+  window.location = 'https://accounts.google.com/logout';
+}
+
 function getUniqueSenders() {
   webDB.execute(
     'SELECT * FROM emails ORDER BY senderName ASC',
     function(emails) {
+      var $logout = $('#logout-button');
       if (emails.length) {
+        $logout.fadeIn();
         var template = Handlebars.compile($('#unsubscribe-template').html());
         emails.forEach(function(email) {
           $('#unsubscribe-page').append(template(email));
         });
         page('/unsubscribe');
       } else {
+        $logout.hide();
         handleAuthResult();
         page('/');
       }
