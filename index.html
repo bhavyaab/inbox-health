@@ -2,28 +2,23 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-    <link href="styles/reset.css" rel="stylesheet">
-    <link href="styles/home.css" rel="stylesheet">
-    <link href="css/header_footer.css" rel="stylesheet">
+    <link href="vendor/styles/reset.css" rel="stylesheet">
+    <link href="vendor/styles/icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="styles/base.css" rel="stylesheet">
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
-    <link href="styles/icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <script id="unsubscribe-template" type="text/x-handlebars-template">
-      <ul>
-        <li>
-          <div class="flex-container">
-            <div class="name-container">
-              <p>{{senderName}}</p>
-            </div> <!-- name-container -->
-            <div class="unsub-container">
-              <a data-link="{{unsubscribe}}" href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
-            </div> <!-- .unsub-container -->
-          </div> <!-- .flex-container -->
-        </li>
-      </ul>
+      <li>
+        <div class="flex-container">
+          <div class="name-container">
+            <p>{{senderName}}</p>
+          </div>
+          <div class="unsub-container">
+            <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
+          </div>
+        </div>
+     </li>
     </script>
   </head>
 
@@ -52,7 +47,7 @@
           <div class="text-box">
             <h1>WELCOME TO INBOX HEALTH</h1>
             <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-            <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
+            <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
           </div>
         </div>
       </section>
@@ -60,17 +55,17 @@
 <!-- //UNSUBSCRIBE PAGE// -->
 
       <section id="unsubscribe-page" class="tab-content">
+        <ul></ul>
       </section>
 
 <!-- //ABOUT PAGE// -->
 
-    <div id="about-page" class="tab-content">
-      <section>
-        <div class="flex-wrapper">
-          <h2>About Us</h2>
-            <p class="about-bio">Let us make your life easier with a little bit of email management - we identify your subscription emails and list them out for you. All you do is login to your Gmail account, view the list of all your subscription emails that we generate for you (do you even remember signing up for that newsletter? That coupon list? Didn’t think so), and then unsubscribe instantly from the ones you don’t need. This is a free app that will give you more space and organization in your inbox.</p>
-        </div>
-      </section>
+      <div id="about-page" class="tab-content">
+      <div class="flex-wrapper">
+        <h2>About Us</h2>
+        <p class="about-bio">Let us make your life easier with a little bit of email management - we identify your subscription emails and list them out for you. All you do is login to your Gmail account, view the list of all your subscription emails that we generate for you (do you even remember signing up for that newsletter? That coupon list? Didn’t think so), and then unsubscribe instantly from the ones you don’t need. This is a free app that will give you more space and organization in your inbox.
+        </p>
+      </div>
       <div class="spacing-bar"></div>
         <section>
           <div class="flex-wrapper flex-wrapper-viewport">
@@ -98,30 +93,30 @@
 <!-- //FOOTER// -->
 
     <footer>
-      <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3>
+      <!-- <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3> -->
     </footer>
 
   <!-- //VENDOR FILES// -->
 
+    <script src="https://apis.google.com/js/client.js?onload=auth.checkAuth"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="vendor/scripts/page.js"></script>
-
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
   <!-- //MODEL FILES// -->
+    <script src="scripts/model/table.js"></script>
+    <script type="text/javascript" src="scripts/model/getMessage.js"></script>
+    <script type="text/javascript" src="scripts/model/listMessage.js"></script>
 
   <!-- //VIEW FILES// -->
-
+    <script type="text/javascript" src="scripts/view/appendTable.js"></script>
   <!-- //CONTROLLER FILES// -->
-  <script src="table.js"></script>
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/unsubscribeController.js"></script>
     <script src="scripts/controller/routes.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
-    <script type="text/javascript" src="scripts/controller/getMessage.js"></script>
-    <script type="text/javascript" src="scripts/controller/listMessage.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
   </body>
 </html>
