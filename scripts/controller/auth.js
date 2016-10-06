@@ -31,7 +31,7 @@
   };
 
   auth.loadGmailApi = function() {
-    gapi.client.load('gmail', 'v1', listMessages);
+    gapi.client.load('gmail', 'v1', list.listMessages);
   };
 
   module.auth = auth;

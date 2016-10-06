@@ -6,7 +6,6 @@
     $('#unsubscribe-page').fadeIn();
   };
 
-  $('#logout-button').on('click', unsubscribeController.signOut);
 
   unsubscribeController.signOut = function() {
     webDB.execute('DROP TABLE emails');
@@ -15,3 +14,5 @@
 
   module.unsubscribeController = unsubscribeController;
 })(window);
+
+$('#logout-button').on('click', unsubscribeController.signOut);
