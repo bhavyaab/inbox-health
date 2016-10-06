@@ -104,6 +104,7 @@ var generateInfo = function(resp){ //eslint-disable-line
       var template = Handlebars.compile($('#unsubscribe-template').html());
       var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
       createEmail(uniqueObj);
+      $('#logout-button').fadeIn();
       $('#unsubscribe-page').append(template(uniqueObj));
     };
   };

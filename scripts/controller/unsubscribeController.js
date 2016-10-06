@@ -5,5 +5,8 @@
       $('#unsubscribe-page').fadeIn();
     }
   };
+
+  $('#logout-button').on('click', signOut);
+
   module.unsubscribeController = unsubscribeController;
 })(window);

@@ -25,17 +25,42 @@ var deleteEmail = function(obj) {
   }]);
 };
 
+// $('li').on('click', function() {
+//   console.log($(this));
+//   console.log('hi');
+// });
+
+function unsubscribeClick() {
+  $('#unsubscribe-page').on('click', 'a', function() {
+    var link = $(this).attr('data-link');
+    console.log(typeof(link));
+    $(this).parent().parent().slideUp();
+    webDB.execute([{
+      'sql': 'DELETE FROM emails WHERE unsubscribe = ?',
+      'data': [$(this).attr('data-link')]
+    }]);
+  });
+}
+
+function signOut() {
+  webDB.execute('DROP TABLE emails');
+  window.location = 'https://accounts.google.com/logout';
+}
+
 function getUniqueSenders() {
   webDB.execute(
     'SELECT * FROM emails ORDER BY senderName ASC',
     function(emails) {
+      var $logout = $('#logout-button');
       if (emails.length) {
+        $logout.fadeIn();
         var template = Handlebars.compile($('#unsubscribe-template').html());
         emails.forEach(function(email) {
           $('#unsubscribe-page').append(template(email));
         });
         page('/unsubscribe');
       } else {
+        $logout.hide();
         handleAuthResult();
         page('/');
       }
@@ -45,3 +70,4 @@ function getUniqueSenders() {
 
 createTable();
 getUniqueSenders();
+unsubscribeClick();
