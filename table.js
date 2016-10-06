@@ -18,10 +18,10 @@ var createEmail = function(obj) {
   }]);
 };
 
-var deleteEmail = function() {
+var deleteEmail = function(obj) {
   webDB.execute([{
     'sql': 'DELETE FROM emails WHERE id = ?;',
-    'data': [this.id]
+    'data': [obj.id]
   }]);
 };
 
@@ -34,10 +34,10 @@ function getUniqueSenders() {
         emails.forEach(function(email) {
           $('#unsubscribe-page').append(template(email));
         });
-        unsubscribeController.index();
+        page('/unsubscribe');
       } else {
         handleAuthResult();
-        homeController.index();
+        page('/');
       }
     }
   );
