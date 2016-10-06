@@ -103,6 +103,7 @@ var generateInfo = function(resp){ //eslint-disable-line
       lookUpTable[senderName] = true;
       var template = Handlebars.compile($('#unsubscribe-template').html());
       var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
+      createEmail(uniqueObj);
       $('#unsubscribe-page').append(template(uniqueObj));
     };
   };
