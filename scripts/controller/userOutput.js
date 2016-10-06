@@ -97,7 +97,7 @@ var generateInfo = function(resp){ //eslint-disable-line
   if(from.includes('<')){
     from = (from.split('<')[1]).split('>')[0];
   };
-  if(unsubscribe){
+  if(unsubscribe && !unsubscribe.includes('mailto')){
     if(lookUpTable.hasOwnProperty(senderName)){}
     else{
       lookUpTable[senderName] = true;
