@@ -19,7 +19,7 @@
               <p>{{senderName}}</p>
             </div> <!-- name-container -->
             <div class="unsub-container">
-              <a href="{{unsubscribe}}" target="_blank"><span class="icon-cross">Unsubscribe</span></a>
+              <a data-link="{{unsubscribe}}" href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
             </div> <!-- .unsub-container -->
           </div> <!-- .flex-container -->
         </li>
@@ -38,7 +38,7 @@
       <ul id="main-nav">
         <li class="full-nav"><a href="/" id="home-click">Home</a></li>
         <li class="full-nav"><a href="/about">About</a></li>
-        <li id="authorize-button" onclick="handleAuthClick(event)"><a href="/unsubscribe">Login</a></li>
+        <li id="logout-button">Log out</li>
       </ul>
     </nav>
   </header>
@@ -109,15 +109,11 @@
 
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
-
   <!-- //MODEL FILES// -->
 
   <!-- //VIEW FILES// -->
 
-    <script src="scripts/views/homeView.js"></script>
-
   <!-- //CONTROLLER FILES// -->
-
   <script src="table.js"></script>
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
@@ -126,7 +122,6 @@
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/getMessage.js"></script>
     <script type="text/javascript" src="scripts/controller/listMessage.js"></script>
-    <script src="scripts/controller/userInput.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
   </body>
 </html>
