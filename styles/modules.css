@@ -1,6 +1,46 @@
 /* MODULE STYLES
 ========================= */
+/* HEADER */
+nav li {
+  margin-right: 20px;
+}
+nav li:last-child {
+  margin-right: 0px;
+}
+header img {
+  height: 90px;
+  width: 300px;
+}
+#fullLogo {
+  display: none;
+}
+.full-nav {
+  display: none;
+}
+
+/* HOME PAGE CONTENT */
+main h1 {
+  font-family: 'Open Sans';
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 160px;
+}
+main h3 {
+  font-family: Helvetica;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+button {
+  height: 65px;
+  width: 265px;
+  background-color: #c71610;
+  color: white;
+  font-size: 20px;
+  margin-top: 35px;
+}
 /*home page animation*/
+
 #home-content {
     position: absolute;
     margin: 0 auto;
@@ -37,7 +77,10 @@ button {
 #main-nav li a:hover {
   color: #c71610;
 }
-
+#logout-button:hover {
+  cursor: pointer;
+  color: #c71610;
+}
 
 .tab-content {
   display: none;
@@ -140,7 +183,19 @@ h2 {
   color: #c71610;
   transition: all 0.3s ease-in-out;
 }
+/* FOOTER */
+footer li {
+  margin: 25px;
+  padding: 0;
+}
 
+footer h3 {
+  font-family: 'Open Sans';
+  color: black;
+  font-size: 17px;
+  text-align: center;
+  margin: 0 auto;
+}
 
 /* MEDIA QUERIES
 ========================= */
@@ -192,5 +247,24 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
   }
-
+  /* HEADER LOGO */
+}
+@media only screen and (min-width: 480px) {
+  #fullLogo {
+    display: block;
+  }
+  #mobileLogo {
+    display: none;
+  }
+  .full-nav {
+    display: block;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .text-box h1 {
+    font-size: 35px;
+  }
+  .text-box h3 {
+    font-size: 15px;
+  }
 }
