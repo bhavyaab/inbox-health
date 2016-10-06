@@ -16,7 +16,7 @@
         lookUpTable[senderName] = true;
         var template = Handlebars.compile($('#unsubscribe-template').html());
         var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
-        createEmail(uniqueObj);
+        table.createEmail(uniqueObj);
         $('#logout-button').fadeIn();
         $('#unsubscribe-page ul').append(template(uniqueObj));
       };

@@ -77,7 +77,7 @@
     return link;
   };
 
-  output.generateInfo = function(resp){ //eslint-disable-line
+  output.generateInfo = function(resp){
     var id = resp.id;
     var from = resp.payload.headers.reduce(function(curr, next) {
       if (next.name === 'From' || next.name === 'sender') {
