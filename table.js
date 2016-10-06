@@ -2,17 +2,19 @@ function createTable() {
   webDB.execute(
     'CREATE TABLE IF NOT EXISTS emails (' +
       'id INTEGER PRIMARY KEY, ' +
+      'mailId INTEGER NOT NULL, ' +
+      'sender VARCHAR NOT NULL, ' +
       'senderName VARCHAR NOT NULL, ' +
       'unsubscribe VARCHAR NOT NULL);'
   );
 }
 
-var createEmail = function() {
+var createEmail = function(obj) {
   webDB.execute([{
     'sql': 'INSERT INTO emails ' +
-    '(mailId, from, senderName, unsubscribe) ' +
+    '(mailId, sender, senderName, unsubscribe) ' +
     'VALUES (?, ?, ?, ?);',
-    'data': [this.mailId, this.from, this.senderName, this.unsubscribe]
+    'data': [obj.mailId, obj.from, obj.senderName, obj.unsubscribe]
   }]);
 };
 
@@ -35,6 +37,7 @@ function getUniqueSenders() {
         unsubscribeController.index();
       } else {
         handleAuthResult();
+        homeController.index();
       }
     }
   );
