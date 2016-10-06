@@ -18,26 +18,13 @@ var createEmail = function(obj) {
   }]);
 };
 
-var deleteEmail = function(obj) {
-  webDB.execute([{
-    'sql': 'DELETE FROM emails WHERE id = ?;',
-    'data': [obj.id]
-  }]);
-};
-
-// $('li').on('click', function() {
-//   console.log($(this));
-//   console.log('hi');
-// });
-
 function unsubscribeClick() {
   $('#unsubscribe-page').on('click', 'a', function() {
-    var link = $(this).attr('data-link');
-    console.log(typeof(link));
+    var $link = $(this).attr('href');
     $(this).parent().parent().slideUp();
     webDB.execute([{
       'sql': 'DELETE FROM emails WHERE unsubscribe = ?',
-      'data': [$(this).attr('data-link')]
+      'data': [$link]
     }]);
   });
 }
@@ -56,7 +43,7 @@ function getUniqueSenders() {
         $logout.fadeIn();
         var template = Handlebars.compile($('#unsubscribe-template').html());
         emails.forEach(function(email) {
-          $('#unsubscribe-page').append(template(email));
+          $('#unsubscribe-page ul').append(template(email));
         });
         page('/unsubscribe');
       } else {

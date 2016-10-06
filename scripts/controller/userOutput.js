@@ -105,7 +105,7 @@ var generateInfo = function(resp){ //eslint-disable-line
       var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
       createEmail(uniqueObj);
       $('#logout-button').fadeIn();
-      $('#unsubscribe-page').append(template(uniqueObj));
+      $('#unsubscribe-page ul').append(template(uniqueObj));
     };
   };
 };
