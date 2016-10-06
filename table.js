@@ -25,6 +25,23 @@ var deleteEmail = function(obj) {
   }]);
 };
 
+// $('li').on('click', function() {
+//   console.log($(this));
+//   console.log('hi');
+// });
+
+function unsubscribeClick() {
+  $('#unsubscribe-page').on('click', 'a', function() {
+    var link = $(this).attr('data-link');
+    console.log(typeof(link));
+    $(this).parent().parent().slideUp();
+    webDB.execute([{
+      'sql': 'DELETE FROM emails WHERE unsubscribe = ?',
+      'data': [$(this).attr('data-link')]
+    }]);
+  });
+}
+
 function signOut() {
   webDB.execute('DROP TABLE emails');
   window.location = 'https://accounts.google.com/logout';
@@ -53,3 +70,4 @@ function getUniqueSenders() {
 
 createTable();
 getUniqueSenders();
+unsubscribeClick();
