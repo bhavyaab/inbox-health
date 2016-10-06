@@ -29,10 +29,7 @@ function unsubscribeClick() {
   });
 }
 
-function signOut() {
-  webDB.execute('DROP TABLE emails');
-  window.location = 'https://accounts.google.com/logout';
-}
+
 
 function getUniqueSenders() {
   webDB.execute(
@@ -48,7 +45,7 @@ function getUniqueSenders() {
         page('/unsubscribe');
       } else {
         $logout.hide();
-        handleAuthResult();
+        auth.handleAuthResult();
         page('/');
       }
     }

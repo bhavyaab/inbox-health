@@ -9,16 +9,16 @@
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
     <script id="unsubscribe-template" type="text/x-handlebars-template">
-        <li>
-          <div class="flex-container">
-            <div class="name-container">
-              <p>{{senderName}}</p>
-            </div>
-            <div class="unsub-container">
-              <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
-            </div>
+      <li>
+        <div class="flex-container">
+          <div class="name-container">
+            <p>{{senderName}}</p>
           </div>
-       </li>
+          <div class="unsub-container">
+            <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
+          </div>
+        </div>
+     </li>
     </script>
   </head>
 
@@ -47,7 +47,7 @@
           <div class="text-box">
             <h1>WELCOME TO INBOX HEALTH</h1>
             <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-            <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
+            <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@
 
   <!-- //VENDOR FILES// -->
 
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+    <script src="https://apis.google.com/js/client.js?onload=auth.checkAuth"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="vendor/scripts/page.js"></script>
