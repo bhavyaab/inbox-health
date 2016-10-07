@@ -166,7 +166,7 @@ h2 {
   background-color: #ccc;
 }
 
-.unsub-container span a {
+.unsub-container a {
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: 700;
@@ -178,8 +178,7 @@ h2 {
   color: #000;
 }
 
-.icon-cross:hover,
-.icon-cross a:hover {
+.unsub-container a:hover {
   color: #c71610;
   transition: all 0.3s ease-in-out;
 }
