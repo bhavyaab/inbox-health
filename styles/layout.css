@@ -1,11 +1,21 @@
 /* LAYOUT STYLES
 ========================= */
+
+.flex-site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-content-wrapper {
+  flex: 1;
+}
+
 /* HEADER */
 header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 60px;
 }
 nav ul {
   display: flex;
