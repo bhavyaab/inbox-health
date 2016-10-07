@@ -96,9 +96,20 @@
         unsubscribe = (unsubscribe.split('<')[1]).split('>')[0];
       };
     };
-    senderName = from.split('<')[0];
-    if(from.includes('<')){
-      from = (from.split('<')[1]).split('>')[0];
+  };
+  senderName = from.split('<')[0];
+  if(from.includes('<')){
+    from = (from.split('<')[1]).split('>')[0];
+  };
+  if(unsubscribe && !unsubscribe.includes('mailto')){
+    if(lookUpTable.hasOwnProperty(senderName)){}
+    else{
+      lookUpTable[senderName] = true;
+      var template = Handlebars.compile($('#unsubscribe-template').html());
+      var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
+      createEmail(uniqueObj);
+      $('#logout-button').fadeIn();
+      $('#unsubscribe-page').append(template(uniqueObj));
     };
     append.generateData(id, from, unsubscribe, senderName);
   };
