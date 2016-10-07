@@ -24,77 +24,79 @@
 
   <!-- //HEADER// -->
 
-  <header>
-    <div id="logos">
-      <a href="/"><img src="img/fullLogo.png" id="fullLogo"></a>
-      <a href="/"><img src="img/mobile.png" id="mobileLogo"></a>
-    </div>
-    <nav>
-      <ul id="main-nav">
-        <li class="full-nav"><a href="/" id="home-click">Home</a></li>
-        <li class="full-nav"><a href="/about">About</a></li>
-        <li id="logout-button">Log out</li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- //CONTENT// -->
-
   <body>
-    <main>
-      <section id="home-content" class="tab-content">
-        <div class="containerBox">
-          <div class="text-box">
-            <h1>WELCOME TO INBOX HEALTH</h1>
-            <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-            <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
-          </div>
+    <div class="flex-site-wrapper">
+      <header>
+        <div id="logos">
+          <a href="/"><img src="img/fullLogo.png" id="fullLogo"></a>
+          <a href="/"><img src="img/mobile.png" id="mobileLogo"></a>
         </div>
-      </section>
+        <nav>
+          <ul id="main-nav">
+            <li class="full-nav"><a href="/" id="home-click">Home</a></li>
+            <li class="full-nav"><a href="/about">About</a></li>
+            <li id="logout-button">Log out</li>
+          </ul>
+        </nav>
+      </header>
 
-<!-- //UNSUBSCRIBE PAGE// -->
+    <!-- //CONTENT// -->
 
-      <section id="unsubscribe-page" class="tab-content">
-        <ul></ul>
-      </section>
-
-<!-- //ABOUT PAGE// -->
-
-      <div id="about-page" class="tab-content">
-      <div class="flex-wrapper">
-        <h2>About Us</h2>
-        <p class="about-bio">Let us make your life easier with a little bit of email management - we identify your subscription emails and list them out for you. All you do is login to your Gmail account, view the list of all your subscription emails that we generate for you (do you even remember signing up for that newsletter? That coupon list? Didn’t think so), and then unsubscribe instantly from the ones you don’t need. This is a free app that will give you more space and organization in your inbox.
-        </p>
-      </div>
-      <div class="spacing-bar"></div>
-        <section>
-          <div class="flex-wrapper flex-wrapper-viewport">
-            <div class="student">
-              <h3>Rae H.</h3>
-              <img src="img/raeh-bio.jpg">
-            </div>
-            <div class="student">
-              <h3>Bhavya B.</h3>
-              <img src="img/bhavyab-bio.jpg">
-            </div>
-            <div class="student">
-              <h3>Steven B.</h3>
-              <img src="img/stevenb-bio.png">
-            </div>
-            <div class="student">
-              <h3>Adrian M.</h3>
-              <img src="img/adrianm-bio.jpg">
+      <main class="flex-content-wrapper">
+        <section id="home-content" class="tab-content">
+          <div class="containerBox">
+            <div class="text-box">
+              <h1>WELCOME TO INBOX HEALTH</h1>
+              <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
+              <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
             </div>
           </div>
         </section>
-      </div>
-    </main>
 
-<!-- //FOOTER// -->
+  <!-- //UNSUBSCRIBE PAGE// -->
 
-    <footer>
-      <!-- <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3> -->
-    </footer>
+        <section id="unsubscribe-page" class="tab-content">
+          <ul></ul>
+        </section>
+
+  <!-- //ABOUT PAGE// -->
+
+        <div id="about-page" class="tab-content">
+        <div class="flex-wrapper">
+          <h2>About Us</h2>
+          <p class="about-bio">Let us make your life easier with a little bit of email management - we identify your subscription emails and list them out for you. All you do is login to your Gmail account, view the list of all your subscription emails that we generate for you (do you even remember signing up for that newsletter? That coupon list? Didn’t think so), and then unsubscribe instantly from the ones you don’t need. This is a free app that will give you more space and organization in your inbox.
+          </p>
+        </div>
+        <div class="spacing-bar"></div>
+          <section>
+            <div class="flex-wrapper flex-wrapper-viewport">
+              <div class="student">
+                <h3>Rae H.</h3>
+                <img src="img/raeh-bio.jpg">
+              </div>
+              <div class="student">
+                <h3>Bhavya B.</h3>
+                <img src="img/bhavyab-bio.jpg">
+              </div>
+              <div class="student">
+                <h3>Steven B.</h3>
+                <img src="img/stevenb-bio.png">
+              </div>
+              <div class="student">
+                <h3>Adrian M.</h3>
+                <img src="img/adrianm-bio.jpg">
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+  <!-- //FOOTER// -->
+
+      <footer>
+        <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3>
+      </footer>
+    </div>
 
   <!-- //VENDOR FILES// -->
 
