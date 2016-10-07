@@ -16,6 +16,7 @@
           </div>
           <div class="unsub-container">
             <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
+            <button id='{{sender}}' class='delete'>Delete</button>
           </div>
         </div>
      </li>
@@ -110,10 +111,12 @@
     <script src="scripts/model/table.js"></script>
     <script type="text/javascript" src="scripts/model/getMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessage.js"></script>
+    <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
 
   <!-- //VIEW FILES// -->
     <script type="text/javascript" src="scripts/view/appendTable.js"></script>
   <!-- //CONTROLLER FILES// -->
+    <script src="scripts/controller/authDelete.js"></script>
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/unsubscribeController.js"></script>
