@@ -53,8 +53,13 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
+}
+
+.student {
+  width: 50%;
 }
 
 /* --- Unsubscribe List Layout --- */
