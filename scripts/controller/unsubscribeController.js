@@ -4,8 +4,12 @@
   unsubscribeController.index = function() {
     $('.tab-content').hide();
     $('#unsubscribe-page').fadeIn();
+    webDB.execute('SELECT * FROM emails', function(emails) {
+      if (emails.length) {
+        $('#home-click').text('Home').attr('href', '/');
+      }
+    });
   };
-
 
   unsubscribeController.signOut = function() {
     webDB.execute('DROP TABLE emails');
