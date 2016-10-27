@@ -5,7 +5,7 @@
   var SCOPES = ['https://mail.google.com/'];
 
   authDelete.checkAuth = function() {
-    gapi.authDelete.authorize(
+    gapi.authDelete.authorize
       {
         'client_id': CLIENT_ID,
         'scope': SCOPES.join(' '),
@@ -13,21 +13,22 @@
       }, authDelete.handleAuthResult);
   };
 
-  authDelete.handleAuthResult = function(authResult) {
-    var authorizeDiv = document.getElementById('authorizeDiv');
-    if (authResult && !authResult.error) {
-      authorizeDiv.style.display = 'none';
-      authDelete.loadGmailApi();
-    } else {
-      authorizeDiv.style.display = 'inline';
-    }
-  };
+
 
   authDelete.handleAuthClick = function(event) {
     var authorizeDiv = $(this).find('button').attr('id');
     gapi.auth.authorize(
     {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
      authDelete.handleAuthResult);
+     authDelete.handleAuthResult = function(authResult) {
+       var authorizeDiv = document.getElementById(authorizeDiv);
+       if (authResult && !authResult.error) {
+         authorizeDiv.style.display = 'none';
+         authDelete.loadGmailApi();
+       } else {
+         authorizeDiv.style.display = 'inline';
+       }
+     };
     return false;
   };
 

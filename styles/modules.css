@@ -31,13 +31,26 @@ main h3 {
   font-weight: lighter;
   margin-top: 20px;
 }
-button {
+#authorize-button {
   height: 65px;
   width: 265px;
   background-color: #c71610;
   color: white;
   font-size: 20px;
   margin-top: 35px;
+}
+.delete{
+     margin: 15px;
+     font-size: 15px;
+     border-radius: 6px;
+     height: 30px;
+     width: 100px;
+}
+.delete:hover{
+background-color: #c71610;
+cursor: pointer;
+height: 40px;
+width: 120px;
 }
 /*home page animation*/
 
@@ -51,7 +64,7 @@ button {
     animation-delay: 0.3s;
     animation-iteration: 1;
 }
-button {
+#authorize-button {
   animation: fade;
   animation-delay: 1.5s;
   animation-duration: 3s;
