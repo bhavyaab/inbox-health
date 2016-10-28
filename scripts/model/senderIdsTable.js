@@ -1,19 +1,18 @@
 (function(module){
  var senderIdsTable = {};
-
 createTableD = function(){
   webDB.execute(
-   'CREATE TABLE IF NOT EXISTS SENDERiDS('+
-     'SENDERNAME VARCHAR NOT NULL' +
-     'TOTAL IDS VARCHAR NOT NULL);'
+   'CREATE TABLE IF NOT EXISTS senderIds('+
+     'sender VARCHAR NOT NULL,' +
+     'allIds VARCHAR NOT NULL);'
   );
 };
- senderIdsTable.createDelTable = function(){
+ senderIdsTable.createDelTable = function(from, ids){
   webDB.execute([{
-   'sql': 'INSERT INTO createDelTable ' +
-   '(senderName, ids)' +
-   'VALUES(?,?);' +
-   'data': [senderName, ids]
+   'sql': 'INSERT INTO senderIds ' +
+   '(sender, allIds)' +
+   'VALUES(?,?);',
+   'data': [from, ids]
   }]);
 };
  createTableD();

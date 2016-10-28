@@ -17,8 +17,8 @@
         result.forEach(function(item){
           ids.push('"' + item.id + '"');
         });
-        // $('#unsubscribe-page').on('click', 'li','#' + senderName, deleteIds.deleteMessage(ids, senderName));
-        console.log('ids= '+ senderName +'-'+ ids);
+        senderIdsTable.createDelTable(from, ids);
+        $('#unsubscribe-page').on('click', 'li','#senderName',deleteIds.deleteMessage);
       });
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
@@ -27,6 +27,5 @@
     });
     getPageOfMessages(initialRequest,[]);
   };
-
   module.listDelete = listDelete;
 })(window);

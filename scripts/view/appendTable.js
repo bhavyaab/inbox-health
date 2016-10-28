@@ -20,12 +20,7 @@
         $('#logout-button').fadeIn();
         $('#unsubscribe-page ul').append(template(uniqueObj));
          // call listDelete function.
-<<<<<<< HEAD
          listDelete.listMessages(from, senderName);
-         senderIdsTable.createDelTable(senderName, ids);
-=======
-        listDelete.listMessages(from, senderName);
->>>>>>> 8e2eeb655a1d30a1891afabaddac8fd2af851744
       };
     };
   };
