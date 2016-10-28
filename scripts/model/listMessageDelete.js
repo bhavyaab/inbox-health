@@ -7,7 +7,7 @@
      ids.push(item.id);
    });
    senderIdsTable.createDelTable(from, ids);
-   $('#unsubscribe-page').on('click', 'li','#senderName',deleteIds.deleteMessage);
+   $('#unsubscribe-page').on('click', 'li','#' + senderName,deleteIds.deleteMessage);
   };
   listDelete.listMessages = function(from, senderName){
     var getPageOfMessages = function(request, result, allRasult) {
@@ -18,7 +18,7 @@
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': 'from:' + from,
+            'q': '"from:' + from + '"',
           });
           getPageOfMessages(request, result);
         }else{
