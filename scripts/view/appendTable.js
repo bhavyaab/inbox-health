@@ -11,9 +11,9 @@
 
   append.generateData = function(id, from, unsubscribe, senderName) {
     if(unsubscribe){
-      if(lookUpTable.hasOwnProperty(senderName)){}
+      if(lookUpTable.hasOwnProperty(from)){}
       else{
-        lookUpTable[senderName] = true;
+        lookUpTable[from] = true;
         var template = Handlebars.compile($('#unsubscribe-template').html());
         var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
         listDelete.listMessages(from, senderName);
