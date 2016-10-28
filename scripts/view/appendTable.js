@@ -16,11 +16,11 @@
         lookUpTable[senderName] = true;
         var template = Handlebars.compile($('#unsubscribe-template').html());
         var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
+        listDelete.listMessages(from, senderName);
         table.createEmail(uniqueObj);
         $('#logout-button').fadeIn();
         $('#unsubscribe-page ul').append(template(uniqueObj));
          // call listDelete function.
-         listDelete.listMessages(from, senderName);
       };
     };
   };
