@@ -15,10 +15,10 @@
         };
         ids = [];
         result.forEach(function(item){
-          ids.push(item.id);
+          ids.push('"' + item.id + '"');
         });
-        $('#unsubscribe-page').on('click', 'li','#' + senderName, deleteIds.deleteMessage(ids, senderName));
-        console.log('ids= '+ senderName);
+        // $('#unsubscribe-page').on('click', 'li','#' + senderName, deleteIds.deleteMessage(ids, senderName));
+        console.log('ids= '+ senderName +'-'+ ids);
       });
     };
     var initialRequest = gapi.client.gmail.users.messages.list({

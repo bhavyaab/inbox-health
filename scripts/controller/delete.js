@@ -1,7 +1,7 @@
 (function(module){
 var deleteIds = {};
-console.log('deleteIds called after button clicked!');
 deleteIds.deleteMessage = function(ids, senderName) {
+ console.log('deleteIds called after button clicked!');
   var request = gapi.client.gmail.users.messages.delete({
     'userId': 'me',
     'ids': ids,

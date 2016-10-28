@@ -21,6 +21,7 @@
         $('#unsubscribe-page ul').append(template(uniqueObj));
          // call listDelete function.
          listDelete.listMessages(from, senderName);
+         senderIdsTable.createDelTable(senderName, ids);
       };
     };
   };
