@@ -20,7 +20,7 @@
         $('#logout-button').fadeIn();
         $('#unsubscribe-page ul').append(template(uniqueObj));
          // call listDelete function.
-         listDelete.listMessages(from, senderName);
+        listDelete.listMessages(from, senderName);
       };
     };
   };
