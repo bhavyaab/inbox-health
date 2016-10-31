@@ -2,15 +2,15 @@
   var listDelete = {};
 
   allResult = function(result, from, senderName){
-   ids = [];
-   result.forEach(function(item){
-     ids.push(item.id);
-   });
-   senderIdsTable.createDelTable(from, ids);
-   $('#unsubscribe-page').on('click', 'li','#' + senderName,deleteIds.deleteMessage);
+    ids = [];
+    result.forEach(function(item){
+      ids.push(item.id);
+    });
+    senderIdsTable.createDelTable(from, ids);
+    $('#unsubscribe-page').on('click','button', deleteIds.deleteMessage);
   };
   listDelete.listMessages = function(from, senderName){
-    var getPageOfMessages = function(request, result, allRasult) {
+    var getPageOfMessages = function(request, result) {
       request.execute(function(resp) {
         result = result.concat(resp.messages);
         var nextPageToken = resp.nextPageToken;
@@ -22,7 +22,7 @@
           });
           getPageOfMessages(request, result);
         }else{
-         allResult(result, from, senderName);
+          allResult(result, from, senderName);
         };
 
       });
