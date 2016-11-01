@@ -7,8 +7,9 @@
      ids.push(item.id);
    });
    senderIdsTable.createDelTable(from, ids);
-   $('#unsubscribe-page').on('click', 'li','#' + senderName,deleteIds.deleteMessage);
+   $('#unsubscribe-page').on('click', 'li','#' + senderName, deleteIds.deleteMessage);
   };
+
   listDelete.listMessages = function(from, senderName){
     var getPageOfMessages = function(request, result, allRasult) {
       request.execute(function(resp) {
