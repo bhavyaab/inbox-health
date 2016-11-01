@@ -5,7 +5,7 @@
       request.execute(function(resp) {
         result = result.concat(resp.messages);
         var nextPageToken = resp.nextPageToken;
-        if (nextPageToken && (result.length < 10)) {
+        if (nextPageToken && (result.length < 100)) {
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
@@ -21,7 +21,7 @@
     var initialRequest = gapi.client.gmail.users.messages.list({
       'userId': 'me',
       'q':'unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out',
-      'resultSizeEstimate': 20,
+      'resultSizeEstimate': 100,
     });
     getPageOfMessages(initialRequest,[]);
   };

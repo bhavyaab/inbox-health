@@ -1,13 +1,12 @@
 (function(module) {
   var listDelete = {};
 
-  allResult = function(result, from, senderName){
+  allResult = function(result, from){
     ids = [];
     result.forEach(function(item){
       ids.push(item.id);
     });
     senderIdsTable.createDelTable(from, ids);
-    $('#unsubscribe-page').on('click','button', deleteIds.deleteMessage);
   };
   listDelete.listMessages = function(from, senderName){
     var getPageOfMessages = function(request, result) {

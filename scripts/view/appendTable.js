@@ -20,7 +20,6 @@
         table.createEmail(uniqueObj);
         $('#logout-button').fadeIn();
         $('#unsubscribe-page ul').append(template(uniqueObj));
-         // call listDelete function.
       };
     };
   };

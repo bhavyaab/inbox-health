@@ -16,7 +16,7 @@
           </div>
           <div class="unsub-container">
             <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
-            <button id='{{from}}' class='delete'>Delete</button>
+            <button id='{{from}}' onclick="deleteIds.deleteMessage(this)">Delete</button>
           </div>
         </div>
      </li>
@@ -109,6 +109,12 @@
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
+    <!-- //MODEL FILES// -->
+    <script src="scripts/model/table.js"></script>
+    <script src="scripts/model/senderIdsTable.js"></script>
+    <script type="text/javascript" src="scripts/model/getMessage.js"></script>
+    <script type="text/javascript" src="scripts/model/listMessage.js"></script>
+    <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
     <!-- //CONTROLLER FILES// -->
     <script src="scripts/controller/delete.js"></script>
     <script src="scripts/controller/homeController.js"></script>
@@ -117,12 +123,6 @@
     <script src="scripts/controller/routes.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
-  <!-- //MODEL FILES// -->
-    <script src="scripts/model/table.js"></script>
-    <script src="scripts/model/senderIdsTable.js"></script>
-    <script type="text/javascript" src="scripts/model/getMessage.js"></script>
-    <script type="text/javascript" src="scripts/model/listMessage.js"></script>
-    <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
 
   <!-- //VIEW FILES// -->
     <script type="text/javascript" src="scripts/view/appendTable.js"></script>
