@@ -11,8 +11,16 @@
     });
   };
 
+<<<<<<< HEAD
   unsubscribeController.signOut = function() {
     webDB.execute('DROP TABLE emails');
+=======
+
+  unsubscribeController.signOut = function(event) {
+    console.log('inside signout function');
+    webDB.execute('DROP TABLE IF EXISTS emails');
+    webDB.execute('DROP TABLE IF EXISTS senderIds');
+>>>>>>> bhavya
     window.location = 'https://accounts.google.com/logout';
   };
 

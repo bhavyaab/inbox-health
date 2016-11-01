@@ -1,30 +1,36 @@
 (function(module) {
-  var list = {};
-  list.listMessages = function(){
+  var listDelete = {};
+
+  allResult = function(result, from){
+    ids = [];
+    result.forEach(function(item){
+      ids.push(item.id);
+    });
+    senderIdsTable.createDelTable(from, ids);
+  };
+  listDelete.listMessages = function(from, senderName){
     var getPageOfMessages = function(request, result) {
       request.execute(function(resp) {
         result = result.concat(resp.messages);
         var nextPageToken = resp.nextPageToken;
-        if (nextPageToken && (result.length < 100)) {
+        if (nextPageToken) {
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': 'unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out',
+            'q': '"from:' + from + '"',
           });
           getPageOfMessages(request, result);
+        }else{
+          allResult(result, from, senderName);
         };
-        result.forEach(function(item){
-          getMessages.getMessage(item.id);
-        });
+
       });
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
       'userId': 'me',
-      'q':'unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out',
-      'resultSizeEstimate': 100,
+      'q': 'from:' + from,
     });
     getPageOfMessages(initialRequest,[]);
   };
-
-  module.list = list;
+  module.listDelete = listDelete;
 })(window);

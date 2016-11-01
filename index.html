@@ -15,11 +15,13 @@
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
-            <a href="{{unsubscribe}}" target="_blank">Unsubscribe</a>
+            <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
+            <button id='{{sender}}' onclick="authDelete.handleAuthClick(this)">Delete</button>
           </div>
         </div>
      </li>
     </script>
+    <title>inbox-health</title>
   </head>
 
   <!-- //HEADER// -->
@@ -48,7 +50,7 @@
             <div class="text-box">
               <h1>WELCOME TO INBOX HEALTH</h1>
               <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-              <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS ></button></a></div>
+              <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS</button></a></div>
             </div>
           </div>
         </section>
@@ -106,23 +108,28 @@
 
     <script src="https://apis.google.com/js/client.js?onload=auth.checkAuth"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
-  <!-- //MODEL FILES// -->
+    <!-- //MODEL FILES// -->
     <script src="scripts/model/table.js"></script>
+    <script src="scripts/model/senderIdsTable.js"></script>
     <script type="text/javascript" src="scripts/model/getMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessage.js"></script>
-
-  <!-- //VIEW FILES// -->
-    <script type="text/javascript" src="scripts/view/appendTable.js"></script>
-  <!-- //CONTROLLER FILES// -->
+    <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
+    <!-- //CONTROLLER FILES// -->
+    <script src="scripts/controller/delete.js"></script>
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/unsubscribeController.js"></script>
     <script src="scripts/controller/routes.js"></script>
+    <script type="text/javascript" src="scripts/controller/authDelete.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
+
+  <!-- //VIEW FILES// -->
+    <script type="text/javascript" src="scripts/view/appendTable.js"></script>
   </body>
 </html>
