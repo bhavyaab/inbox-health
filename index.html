@@ -16,7 +16,7 @@
           </div>
           <div class="unsub-container">
             <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
-            <button id='{{from}}' onclick="deleteIds.deleteMessage(this)">Delete</button>
+            <button id='{{sender}}' onclick="authDelete.handleAuthClick(this)">Delete</button>
           </div>
         </div>
      </li>
@@ -121,6 +121,7 @@
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/unsubscribeController.js"></script>
     <script src="scripts/controller/routes.js"></script>
+    <script type="text/javascript" src="scripts/controller/authDelete.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
 

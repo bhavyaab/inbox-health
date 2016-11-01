@@ -8,7 +8,7 @@
 
 
   unsubscribeController.signOut = function() {
-    webDB.execute('DROP TABLE emails');
+    webDB.execute('DROP TABLE emails, DROP TABLE senderIds');
     window.location = 'https://accounts.google.com/logout';
   };
 
