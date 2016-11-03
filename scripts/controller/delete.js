@@ -1,6 +1,7 @@
 (function(module){
   var deleteIds = {};
-  deleteIds.deleteMessage = function(allIds) {
+  deleteIds.deleteMessage = function() {
+    console.log('inside deleteIds.deleteMessage', 'allIds - ' +allIds);
     var request = gapi.client.gmail.users.messages.delete({
       'userId': 'me',
       'ids': allIds[0],
