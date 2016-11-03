@@ -36,17 +36,19 @@
     webDB.execute(
      'SELECT allIds FROM senderIds ' +
      'WHERE sender = ' + '"' + from + '"', function(result){
+      console.log(result);
       var allIds = result[0].allIds.split(',');
       console.log(typeof(allIds));
-      console.log(result);
       deleteMessage = function() {
-        console.log('inside deleteIds.deleteMessage', 'allIds - ' + allIds[0]);
-        var request = gapi.client.gmail.users.messages.delete({
-          'userId': 'me',
-          'id': allIds[0],
+        allIds.forEach(function(item){
+          var request = gapi.client.gmail.users.messages.delete({
+            'userId': 'me',
+            'id': item,
+          });
+          request.execute(
+           function(resp) { console.log('resp = "' + resp + '"- deleted emails from ' + from + '  sender.');});
         });
-        request.execute(
-         function(resp) { console.log('resp = "' + resp + '"- deleted emails from ' + from + '  sender.');});
+        console.log('inside deleteIds.deleteMessage', 'allIds - ' + allIds[0]);
       };
       gapi.client.load('gmail', 'v1', deleteMessage);
     }

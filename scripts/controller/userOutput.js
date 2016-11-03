@@ -47,7 +47,8 @@
   function noSubscribeHeader(currMessage) {
     var raw = getRawData(currMessage);
     var newString = createHtmlAsString(raw);
-    var unsubscribePosition = newString.search('unsubscribe');
+    if(newString){
+      var unsubscribePosition = newString.search('unsubscribe');
     if (unsubscribePosition === -1) {
       unsubscribePosition = newString.search('opt out');
     }
@@ -75,7 +76,7 @@
       link = allHrefs[allHrefs.length - 1].split('"')[0];
     }
     return link;
-  };
+  }};
 
   output.generateInfo = function(resp){
     var id = resp.id;
@@ -102,6 +103,5 @@
     };
     append.generateData(id, from, unsubscribe, senderName);
   };
-
   module.output = output;
 })(window);

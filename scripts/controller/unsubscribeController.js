@@ -11,8 +11,11 @@
     });
   };
   unsubscribeController.signOut = function(event) {
-    webDB.execute('DROP TABLE IF EXISTS emails');
-    webDB.execute('DROP TABLE IF EXISTS senderIds');
+    html5sql.process(
+      [
+        'DROP TABLE emails',
+        'DROP TABLE senderIds',
+      ]);
     location.reload();
   };
 
