@@ -3,7 +3,6 @@
   createTable = function() {
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS emails (' +
-        'id INTEGER PRIMARY KEY, ' +
         'mailId INTEGER NOT NULL, ' +
         'sender VARCHAR NOT NULL, ' +
         'senderName VARCHAR NOT NULL, ' +
