@@ -15,8 +15,8 @@
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
+           <button id="{{sender}}" onclick="authDelete.handleAuthClick(this)">Delete</button>
             <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
-            <button id='{{sender}}' onclick="authDelete.handleAuthClick(this)">Delete</button>
           </div>
         </div>
      </li>
@@ -37,7 +37,7 @@
           <ul id="main-nav">
             <li class="full-nav"><a href="/" id="home-click">Home</a></li>
             <li class="full-nav"><a href="/about">About</a></li>
-            <li id="logout-button">Log out</li>
+            <li id="logout-button" onclick="unsubscribeController.signOut()">Log out</li>
           </ul>
         </nav>
       </header>

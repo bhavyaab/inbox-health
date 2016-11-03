@@ -9,7 +9,7 @@
   };
   senderIdsTable.createDelTable = function(from, ids){
     webDB.execute([{
-      'sql': 'INSERT INTO senderIds ' +
+      'sql': 'INSERT INTO senderIds' +
       '(sender, allIds)' +
       'VALUES(?,?);',
       'data': [from, ids]

@@ -1,6 +1,5 @@
 (function(module) {
   var listDelete = {};
-
   allResult = function(result, from){
     ids = [];
     result.forEach(function(item){
