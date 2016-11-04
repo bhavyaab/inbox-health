@@ -40,7 +40,7 @@ main h3 {
   margin-top: 35px;
 }
 .delete{
-     margin: 15px;
+     margin: 7px;
      font-size: 15px;
      border-radius: 6px;
      height: 30px;
@@ -179,20 +179,20 @@ h2 {
   background-color: #ccc;
 }
 
-.unsub-container span a {
+.unsub-container a {
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: 700;
   color: #000;
-  margin-left: 10px;
+  margin-left: 33px;
+  margin-top: 12px;
 }
 
 .icon-cross {
   color: #000;
 }
 
-.icon-cross:hover,
-.icon-cross a:hover {
+.unsub-container a:hover {
   color: #c71610;
   transition: all 0.3s ease-in-out;
 }

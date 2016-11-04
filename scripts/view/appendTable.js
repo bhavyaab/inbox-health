@@ -4,7 +4,7 @@
 
   function GetInfo(id, from, unsubscribe,senderName){
     this.mailId = id;
-    this.from = from;
+    this.sender = from;
     this.unsubscribe = unsubscribe;
     this.senderName = senderName;
   };
@@ -14,13 +14,12 @@
       if(lookUpTable.hasOwnProperty(from)){}
       else{
         lookUpTable[from] = true;
-        var template = Handlebars.compile($('#unsubscribe-template').html());
         var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
         listDelete.listMessages(from, senderName);
         table.createEmail(uniqueObj);
-        $('#logout-button').fadeIn();
+        var template = Handlebars.compile($('#unsubscribe-template').html());
         $('#unsubscribe-page ul').append(template(uniqueObj));
-         // call listDelete function.
+        $('#logout-button').fadeIn();
       };
     };
   };

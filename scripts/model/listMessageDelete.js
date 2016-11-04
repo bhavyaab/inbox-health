@@ -1,17 +1,15 @@
 (function(module) {
   var listDelete = {};
-
-  allResult = function(result, from, senderName){
-   ids = [];
-   result.forEach(function(item){
-     ids.push(item.id);
-   });
-   senderIdsTable.createDelTable(from, ids);
-   $('#unsubscribe-page').on('click', 'li','#' + senderName, deleteIds.deleteMessage);
+  allResult = function(result, from){
+    ids = [];
+    result.forEach(function(item){
+      ids.push(item.id);
+    });
+    senderIdsTable.createDelTable(from, ids);
   };
 
   listDelete.listMessages = function(from, senderName){
-    var getPageOfMessages = function(request, result, allRasult) {
+    var getPageOfMessages = function(request, result) {
       request.execute(function(resp) {
         result = result.concat(resp.messages);
         var nextPageToken = resp.nextPageToken;
@@ -19,18 +17,18 @@
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': '"from:' + from + '"',
+            'q': from,
           });
           getPageOfMessages(request, result);
         }else{
-         allResult(result, from, senderName);
+          allResult(result, from, senderName);
         };
 
       });
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
       'userId': 'me',
-      'q': 'from:' + from,
+      'q': from,
     });
     getPageOfMessages(initialRequest,[]);
   };

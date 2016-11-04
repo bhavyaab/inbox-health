@@ -1,13 +1,14 @@
 (function(module){
   var deleteIds = {};
-  deleteIds.deleteMessage = function(event) {
-    console.log(from + 'deleteIds called after button clicked!');
-    var request = gapi.client.gmail.users.messages.delete({
-      'userId': 'me',
-      'ids': ids,
+  deleteIds.deleteMessage = function(allIds) {
+    allIds.forEach(function(item){
+      var request = gapi.client.gmail.users.messages.delete({
+        'userId': 'me',
+        'id': item,
+      });
+      request.execute(
+       function(resp) { console.log('resp = "' + resp + '"- deleted ' + ids.length + 'emails from ' + from + '  sender.');});
     });
-    request.execute(
-   function(resp) { console.log(resp + '- deleted' + ids.length + 'emails from ' + senderName + ' sender.');});
   };
   module.deleteIds = deleteIds;
 })(window);
