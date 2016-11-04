@@ -49,34 +49,34 @@
     var newString = createHtmlAsString(raw);
     if(newString){
       var unsubscribePosition = newString.search('unsubscribe');
-    if (unsubscribePosition === -1) {
-      unsubscribePosition = newString.search('opt out');
-    }
-    var cutTo;
-    if (unsubscribePosition - 1200 < 0) {
-      cutTo = 0;
-    } else {
-      cutTo = unsubscribePosition - 1200;
-    }
-    var linkString = newString.slice(cutTo, unsubscribePosition);
-    var allHrefs = linkString.split('href="');
-    var link;
-    if (allHrefs.length === 1) {
-      if (unsubscribePosition + 1200 > newString.length) {
-        cutTo = newString.length - 1;
+      if (unsubscribePosition === -1) {
+        unsubscribePosition = newString.search('opt out');
+      }
+      var cutTo;
+      if (unsubscribePosition - 1200 < 0) {
+        cutTo = 0;
       } else {
-        cutTo = unsubscribePosition + 1200;
+        cutTo = unsubscribePosition - 1200;
       }
-      linkString = newString.slice(unsubscribePosition, cutTo);
-      allHrefs = linkString.split('href="');
-      if (allHrefs.length !== 1) {
-        link = allHrefs[1].split('"')[0];
+      var linkString = newString.slice(cutTo, unsubscribePosition);
+      var allHrefs = linkString.split('href="');
+      var link;
+      if (allHrefs.length === 1) {
+        if (unsubscribePosition + 1200 > newString.length) {
+          cutTo = newString.length - 1;
+        } else {
+          cutTo = unsubscribePosition + 1200;
+        }
+        linkString = newString.slice(unsubscribePosition, cutTo);
+        allHrefs = linkString.split('href="');
+        if (allHrefs.length !== 1) {
+          link = allHrefs[1].split('"')[0];
+        }
+      } else {
+        link = allHrefs[allHrefs.length - 1].split('"')[0];
       }
-    } else {
-      link = allHrefs[allHrefs.length - 1].split('"')[0];
-    }
-    return link;
-  }};
+      return link;
+    }};
 
   output.generateInfo = function(resp){
     var id = resp.id;
@@ -97,9 +97,11 @@
         unsubscribe = (unsubscribe.split('<')[1]).split('>')[0];
       };
     };
-    senderName = from.split('<')[0];
-    if(from.includes('<')){
-      from = (from.split('<')[1]).split('>')[0];
+    if(from){
+      senderName = from.split('<')[0];
+      if(from.includes('<')){
+        from = (from.split('<')[1]).split('>')[0];
+      };
     };
     append.generateData(id, from, unsubscribe, senderName);
   };
