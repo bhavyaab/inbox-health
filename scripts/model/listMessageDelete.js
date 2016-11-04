@@ -3,7 +3,11 @@
   allResult = function(result, from){
     ids = [];
     result.forEach(function(item){
-      ids.push(item.id);
+      if(item){
+        ids.push(item.id);
+      }else{
+        console.log(from);
+      };
     });
     senderIdsTable.createDelTable(from, ids);
   };
