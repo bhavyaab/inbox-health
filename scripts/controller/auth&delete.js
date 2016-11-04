@@ -38,7 +38,7 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            prompt('you have deleted ' + allIds.length + ' emails');
+            alert('you have deleted ' + allIds.length + ' emails');
           }
         }).fail(function(error){
           console.log(error);
