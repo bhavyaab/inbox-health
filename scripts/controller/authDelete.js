@@ -38,7 +38,6 @@
      'WHERE sender = ' + '"' + from + '"', function(result){
       console.log(result);
       var allIds = result[0].allIds.split(',');
-      console.log(typeof(allIds));
       deleteMessage = function() {
         allIds.forEach(function(item){
           var request = gapi.client.gmail.users.messages.delete({

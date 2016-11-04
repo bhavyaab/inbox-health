@@ -15,8 +15,8 @@
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
-           <button id="{{sender}}" onclick="authDelete.handleAuthClick(this)">Delete</button>
-            <a href="{{unsubscribe}}" target="_blank" class="icon-cross">Unsubscribe</a>
+           <button id="{{sender}}" class="delete" onclick="authDelete.handleAuthClick(this)">Delete</button>
+            <button class="delete" href="{{unsubscribe}}" target="_blank">Unsubscribe</button>
           </div>
         </div>
      </li>

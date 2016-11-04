@@ -16,7 +16,7 @@
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': '"from:' + from + '"',
+            'q': from,
           });
           getPageOfMessages(request, result);
         }else{
@@ -27,7 +27,7 @@
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
       'userId': 'me',
-      'q': 'from:' + from,
+      'q': from,
     });
     getPageOfMessages(initialRequest,[]);
   };
