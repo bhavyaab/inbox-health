@@ -16,7 +16,7 @@
           </div>
           <div class="unsub-container">
            <button id="{{sender}}" class="delete" onclick="authDelete.handleAuthClick(this)">Delete</button>
-            <button class="delete" href="{{unsubscribe}}" target="_blank">Unsubscribe</button>
+            <a href="{{unsubscribe}}" target="_blank">Unsubscribe</a>
           </div>
         </div>
      </li>
@@ -120,7 +120,6 @@
     <script type="text/javascript" src="scripts/model/listMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
     <!-- //CONTROLLER FILES// -->
-    <script src="scripts/controller/delete.js"></script>
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/unsubscribeController.js"></script>
