@@ -40,7 +40,7 @@ main h3 {
   margin-top: 35px;
 }
 .delete{
-     margin: 15px;
+     margin: 7px;
      font-size: 15px;
      border-radius: 6px;
      height: 30px;
@@ -184,7 +184,8 @@ h2 {
   font-size: 1em;
   font-weight: 700;
   color: #000;
-  margin-left: 10px;
+  margin-left: 33px;
+  margin-top: 12px;
 }
 
 .icon-cross {

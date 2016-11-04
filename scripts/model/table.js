@@ -15,7 +15,7 @@
       'sql': 'INSERT INTO emails ' +
       '(mailId, sender, senderName, unsubscribe) ' +
       'VALUES (?, ?, ?, ?);',
-      'data': [obj.mailId, obj.from, obj.senderName, obj.unsubscribe]
+      'data': [obj.mailId, obj.sender, obj.senderName, obj.unsubscribe]
     }]);
   };
 

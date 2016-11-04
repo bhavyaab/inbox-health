@@ -45,9 +45,11 @@
         });
       };
       var requestData;
+      console.log('you have ' + allIds.length + ' emails');
       if (allIds.length > 1000) {
         do {
           requestData = allIds.splice(0, 999);
+          console.log('requestData length = ' + requestData.length);
           callApi();
         }while(allIds.length > 1000);
       } else {
@@ -70,6 +72,7 @@
      'WHERE sender = ' + '"' + from + '"', function(result){
       allIds = result[0].allIds.split(',');
       deleteBatch();
+      document.getElementById(from).removeEventListener('onclick', authDelete.handleAuthResult);
     }
     );
   };

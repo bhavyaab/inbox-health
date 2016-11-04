@@ -3,10 +3,15 @@
   allResult = function(result, from){
     ids = [];
     result.forEach(function(item){
-      ids.push(item.id);
+      if(item){
+        ids.push(item.id);
+      }else{
+        console.log(from);
+      };
     });
     senderIdsTable.createDelTable(from, ids);
   };
+
   listDelete.listMessages = function(from, senderName){
     var getPageOfMessages = function(request, result) {
       request.execute(function(resp) {
@@ -16,7 +21,7 @@
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': '"from:' + from + '"',
+            'q': from,
           });
           getPageOfMessages(request, result);
         }else{
@@ -27,7 +32,7 @@
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
       'userId': 'me',
-      'q': 'from:' + from,
+      'q': from,
     });
     getPageOfMessages(initialRequest,[]);
   };
