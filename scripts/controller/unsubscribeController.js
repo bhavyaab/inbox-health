@@ -17,7 +17,6 @@
         'DROP TABLE senderIds',
       ]);
     page('/', homeController.index);
-    location.reload();
   };
 
   module.unsubscribeController = unsubscribeController;
