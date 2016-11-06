@@ -5,7 +5,7 @@
     $('.tab-content').hide();
     $('#home-content').fadeIn();
     webDB.execute('SELECT * FROM emails', function(emails) {
-      if (emails.length) {
+      if (emails.length > 0) {
         $('#home-click').text('Unsubscribe').attr('href', '/unsubscribe');
       }
     });
