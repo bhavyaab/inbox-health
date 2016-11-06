@@ -8,6 +8,9 @@
       if (emails.length) {
         $('#home-click').text('Home').attr('href', '/');
       }
+      if (emails.length === 0) {
+        page('/', homeController.index);
+      }
     });
   };
   unsubscribeController.signOut = function(event) {
