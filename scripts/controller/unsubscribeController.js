@@ -16,6 +16,7 @@
         'DROP TABLE emails',
         'DROP TABLE senderIds',
       ]);
+    page('/', homeController.index);
     location.reload();
   };
 
