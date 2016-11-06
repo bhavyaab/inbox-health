@@ -19,7 +19,7 @@
         'DROP TABLE emails',
         'DROP TABLE senderIds',
       ]);
-    location.reload();
+    page();
   };
 
   module.unsubscribeController = unsubscribeController;
