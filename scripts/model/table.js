@@ -44,7 +44,6 @@
           page('/unsubscribe');
         } else {
           $logout.hide();
-          auth.handleAuthResult();
           page('/');
         }
       }
