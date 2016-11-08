@@ -43,8 +43,6 @@ main h3 {
      margin: 7px;
      font-size: 15px;
      border-radius: 6px;
-     height: 30px;
-     width: 100px;
 }
 .delete:hover{
 background-color: #c71610;
