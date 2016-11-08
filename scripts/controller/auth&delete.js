@@ -39,6 +39,11 @@
           data: JSON.stringify(requestData),
           success: function(){
             alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+            // var $newdiv1 = $( '<div class="delete">' + allIds.length + ' emails deleted.</div>');
+            // var existingButton = document.getElementById(from);
+            // var parentDiv = existingButton.parentNode;
+            // parentDiv.append( $newdiv1, [ existingButton ] );
+            $('button #' + from).replaceWith('<div class="delete"> ' + allIds.length + ' emails deleted.</div>');
           }
         }).fail(function(error){
           console.log(error);
