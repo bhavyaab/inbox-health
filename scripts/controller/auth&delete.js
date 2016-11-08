@@ -7,7 +7,7 @@
   var allIds;
   var accessToken;
   authDelete.offEventListner = function(element){
-    alert('you have deleted ' + allIds.length + ' emails from "' + element.id + '"');
+    // alert('you have deleted ' + allIds.length + ' emails from "' + element.id + '"');
   };
   authDelete.checkAuth = function() {
     gapi.auth.authorize(
