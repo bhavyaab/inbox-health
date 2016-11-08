@@ -14,6 +14,7 @@
       'VALUES(?,?);',
       'data': [from, ids]
     }]);
+    noOfEmails.allEmails(from);
   };
   createTableD();
   module.senderIdsTable = senderIdsTable;

@@ -47,7 +47,6 @@
         });
       };
       var requestData;
-      console.log('you have ' + allIds.length + ' emails');
       document.getElementById(from).innerHTML = allIds.length + ' emails deleted';
       if (allIds.length > 1000) {
         do {
@@ -58,7 +57,11 @@
         console.log('you have requestData ' + allIds.length + ' emails');
         requestData = {ids : allIds};
         callApi();
-        alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+        if(allIds.length > 1){
+         alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+        }else{
+         alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+        };
       };
     });
   };
@@ -75,7 +78,6 @@
      'WHERE sender = ' + '"' + from + '"', function(result){
       allIds = result[0].allIds.split(',');
       deleteBatch();
-      document.getElementById(from).removeEventListener('onclick', authDelete.handleAuthResult);
     }
     );
   };

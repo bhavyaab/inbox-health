@@ -9,6 +9,7 @@
         console.log(from);
       };
     });
+    console.log('senderIdsTable');
     senderIdsTable.createDelTable(from, ids);
   };
 
