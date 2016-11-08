@@ -40,8 +40,6 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
-            document.getElementById(from).innerHTML = allIds.length + ' emails deleted';
             document.getElementById(from).setAttribute( 'onClick', 'authDelete.offEventListner(this);' );
           }
         }).fail(function(error){
@@ -50,16 +48,17 @@
       };
       var requestData;
       console.log('you have ' + allIds.length + ' emails');
+      document.getElementById(from).innerHTML = allIds.length + ' emails deleted';
       if (allIds.length > 1000) {
         do {
-          requestData = allIds.splice(0, 999);
-          console.log('requestData length = ' + requestData.length);
+          requestData = {ids : allIds.splice(0, 999)};
           callApi();
         }while(allIds.length > 1000);
       } else {
         console.log('you have requestData ' + allIds.length + ' emails');
         requestData = {ids : allIds};
         callApi();
+        alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
       };
     });
   };
