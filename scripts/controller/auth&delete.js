@@ -6,7 +6,9 @@
   var from;
   var allIds;
   var accessToken;
-
+  authDelete.offEventListner = function(element){
+    alert('you have deleted ' + allIds.length + ' emails from "' + element.id + '"');
+  };
   authDelete.checkAuth = function() {
     gapi.auth.authorize(
       {
@@ -39,6 +41,8 @@
           data: JSON.stringify(requestData),
           success: function(){
             alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+            document.getElementById(from).innerHTML = allIds.length + ' emails deleted';
+            document.getElementById(from).setAttribute( 'onClick', 'authDelete.offEventListner(this);' );
           }
         }).fail(function(error){
           console.log(error);
