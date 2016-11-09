@@ -4,8 +4,8 @@
   homeController.index = function() {
     $('.tab-content').hide();
     $('#home-content').fadeIn();
-    webDB.execute('SELECT * FROM emails', function(emails) {
-      if (emails.length) {
+    webDB.execute('SELECT * FROM emails INNER JOIN senderIds ON emails.sender = senderIds.sender', function(result) {
+      if (result.length) {
         $('#home-click').text('Unsubscribe').attr('href', '/unsubscribe');
       }
     });
