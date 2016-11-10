@@ -10,7 +10,7 @@
       };
     });
     senderIdsTable.createDelTable(from, ids);
-    emailNo.allEmails(from, ids);
+    emailNo.allEmails(from, ids.length);
   };
 
   listDelete.listMessages = function(from, senderName){

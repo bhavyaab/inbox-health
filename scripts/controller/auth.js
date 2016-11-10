@@ -2,7 +2,7 @@
   var auth = {};
   var CLIENT_ID = '177098992391-62qc3rb4ovmlss7vtko4e280pgj6p8pp.apps.googleusercontent.com';
 
-  var SCOPES = ['https://www.googleapis.com/auth/gmail.modify'];
+  var SCOPES = ['https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/plus.login'];
 
   auth.checkAuth = function() {
     gapi.auth.authorize(
@@ -30,8 +30,8 @@
   };
 
   auth.loadGmailApi = function() {
-    gapi.client.load('gmail', 'v1', list.listMessages);
     gapi.client.load('plus','v1', profile.info);
+    gapi.client.load('gmail', 'v1', list.listMessages);
   };
 
   module.auth = auth;

@@ -9,7 +9,7 @@
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
     <script id="unsubscribe-template" type="text/x-handlebars-template">
-      <li>
+      <div>
         <div class="flex-container">
           <div class="name-container">
             <p>{{senderName}}</p>
@@ -19,7 +19,7 @@
             <a href="{{unsubscribe}}" target="_blank">Unsubscribe</a>
           </div>
         </div>
-     </li>
+     </div>
     </script>
     <title>inbox-health</title>
   </head>
@@ -58,6 +58,9 @@
   <!-- //UNSUBSCRIBE PAGE// -->
 
         <section id="unsubscribe-page" class="tab-content">
+          <div id="profile">
+            <img id="profile-image">
+          </div>
           <ul></ul>
         </section>
 
@@ -114,6 +117,7 @@
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <!-- //MODEL FILES// -->
+    <script type="text/javascript" src="scripts/model/profileTable.js"></script>
     <script type="text/javascript" src="scripts/model/emailsNo.js"></script>
     <script type="text/javascript" src="scripts/model/table.js"></script>
     <script type="text/javascript" src="scripts/model/senderIdsTable.js"></script>

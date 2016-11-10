@@ -7,7 +7,7 @@
   var allIds;
   var accessToken;
   authDelete.offEventListner = function(element){
-    // alert('you have deleted ' + allIds.length + ' emails from "' + element.id + '"');
+    webDB.execute('DELETE allIds FROM senderIds WHERE sender = ' + from);
   };
   authDelete.checkAuth = function() {
     gapi.auth.authorize(

@@ -4,11 +4,11 @@
   unsubscribeController.index = function() {
     $('.tab-content').hide();
     $('#unsubscribe-page').fadeIn();
-    webDB.execute('SELECT * FROM emails INNER JOIN senderIds ON emails.sender = senderIds.sender', function(result) {
-      if (result.length) {
-        // $('#home-click').text('Home').attr('href', '/');
+    webDB.execute('SELECT * FROM emails', function(emails) {
+      if (emails.length) {
+        $('#home-click').text('Home').attr('href', '/');
       }
-      if (result.length === 0) {
+      if (emails.length === 0) {
         page('/', homeController.index);
       }
     });
@@ -18,6 +18,7 @@
       [
         'DROP TABLE emails',
         'DROP TABLE senderIds',
+        'DROP TABLE profileTable'
       ]);
     location.reload();
     page('/');
