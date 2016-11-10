@@ -10,6 +10,7 @@
       };
     });
     senderIdsTable.createDelTable(from, ids);
+    emailNo.allEmails(from, ids.length);
   };
 
   listDelete.listMessages = function(from, senderName){
@@ -21,7 +22,7 @@
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': from,
+            'q': from.split('@')[1],
           });
           getPageOfMessages(request, result);
         }else{
@@ -32,7 +33,7 @@
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
       'userId': 'me',
-      'q': from,
+      'q': from.split('@')[1],
     });
     getPageOfMessages(initialRequest,[]);
   };

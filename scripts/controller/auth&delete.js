@@ -6,9 +6,6 @@
   var from;
   var allIds;
   var accessToken;
-  authDelete.offEventListner = function(element){
-    // alert('you have deleted ' + allIds.length + ' emails from "' + element.id + '"');
-  };
   authDelete.checkAuth = function() {
     gapi.auth.authorize(
       {
@@ -40,14 +37,14 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            document.getElementById(from).setAttribute( 'onClick', 'authDelete.offEventListner(this);' );
+            document.getElementById(from).setAttribute('onClick', 'emailNo.offEventListner(this);');
+            webDB.execute('UPDATE senderIds SET allIds = 0 WHERE sender = ' + '"' + from + '"');
           }
         }).fail(function(error){
           console.log(error);
         });
       };
       var requestData;
-      console.log('you have ' + allIds.length + ' emails');
       document.getElementById(from).innerHTML = allIds.length + ' emails deleted';
       if (allIds.length > 1000) {
         do {
@@ -58,7 +55,11 @@
         console.log('you have requestData ' + allIds.length + ' emails');
         requestData = {ids : allIds};
         callApi();
-        alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+        if(allIds.length > 1){
+          alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+        }else{
+          alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+        };
       };
     });
   };
@@ -75,7 +76,6 @@
      'WHERE sender = ' + '"' + from + '"', function(result){
       allIds = result[0].allIds.split(',');
       deleteBatch();
-      document.getElementById(from).removeEventListener('onclick', authDelete.handleAuthResult);
     }
     );
   };

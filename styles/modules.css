@@ -39,17 +39,6 @@ main h3 {
   font-size: 20px;
   margin-top: 35px;
 }
-.delete{
-     margin: 7px;
-     font-size: 15px;
-     border-radius: 6px;
-}
-.delete:hover{
-background-color: #c71610;
-cursor: pointer;
-height: 40px;
-width: 120px;
-}
 /*home page animation*/
 
 #home-content {
@@ -140,9 +129,27 @@ h2 {
   box-shadow: 0 0 10px #000;
   cursor: pointer;
 }
-
+/*  ------ profile info --------  */
+#profile{
+ height: 9em;
+ width: 100%;
+}
+#profile > img{
+  display: inline;
+  height: 6em;
+  width: 6em;
+  margin-top: 3.5%;
+  margin-left: 80%;
+  border-radius: 3em;
+}
 /* --- Unsubscribe List -- */
-
+#unsubscribe-page {
+ background-color: #eee;
+ border-radius: 2em;;
+}
+#unsubscribe-page ul > div{
+ border-radius: 1em;
+}
 .letter span {
   font-size: 1.5em;
   font-weight: 700;
@@ -177,7 +184,7 @@ h2 {
   background-color: #ccc;
 }
 
-.unsub-container a {
+.unsub-container a, .unsub-container div {
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: 700;
@@ -190,9 +197,10 @@ h2 {
   color: #000;
 }
 
-.unsub-container a:hover {
+.unsub-container a:hover, .unsub-container div:hover {
   color: #c71610;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 /* FOOTER */
 footer li {

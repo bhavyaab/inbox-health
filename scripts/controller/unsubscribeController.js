@@ -18,6 +18,7 @@
       [
         'DROP TABLE emails',
         'DROP TABLE senderIds',
+        'DROP TABLE profileTable'
       ]);
     location.reload();
     page('/');
