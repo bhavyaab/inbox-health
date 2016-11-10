@@ -11,10 +11,9 @@
 
   append.generateData = function(id, from, unsubscribe, senderName) {
     if(unsubscribe){
-      var property = from.split('@')[1];
-      if(lookUpTable.hasOwnProperty(property)){}
+      if(lookUpTable.hasOwnProperty(from)){}
       else{
-        lookUpTable[property] = true;
+        lookUpTable[from] = true;
         var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
         listDelete.listMessages(from, senderName);
         table.createEmail(uniqueObj);

@@ -37,8 +37,8 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            document.getElementById(from).setAttribute('onClick', 'emailNo.offEventListner(this);');
             webDB.execute('UPDATE senderIds SET allIds = 0 WHERE sender = ' + '"' + from + '"');
+            senderIdsTable.insert();
           }
         }).fail(function(error){
           console.log(error);
@@ -52,13 +52,12 @@
           callApi();
         }while(allIds.length > 1000);
       } else {
-        console.log('you have requestData ' + allIds.length + ' emails');
         requestData = {ids : allIds};
         callApi();
-        if(allIds.length > 1){
-          alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
-        }else{
+        if(allIds.length === 1){
           alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+        }else{
+          alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
         };
       };
     });
@@ -79,6 +78,5 @@
     }
     );
   };
-
   module.authDelete = authDelete;
 })(window);

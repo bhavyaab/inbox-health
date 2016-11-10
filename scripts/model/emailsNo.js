@@ -1,10 +1,11 @@
 (function(module){
   var emailNo = {};
   emailNo.allEmails = function(from, emailsNo){
+    var button = document.getElementById(from);
     if(emailsNo === 1){
-      document.getElementById(from).innerHTML = 'Delete ' + emailsNo + ' email';
+      button.innerHTML = 'Delete ' + emailsNo + ' email';
     }else{
-      document.getElementById(from).innerHTML = 'Delete all ' + emailsNo + ' emails';
+      button.innerHTML = 'Delete all ' + emailsNo + ' emails';
     };
   };
   emailNo.offEventListner = function(element){
