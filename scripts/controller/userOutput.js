@@ -102,8 +102,8 @@
       if(from.includes('<')){
         from = (from.split('<')[1]).split('>')[0];
       };
+      append.generateData(id, from, unsubscribe, senderName);
     };
-    append.generateData(id, from, unsubscribe, senderName);
   };
   module.output = output;
 })(window);

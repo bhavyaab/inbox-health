@@ -39,18 +39,6 @@ main h3 {
   font-size: 20px;
   margin-top: 35px;
 }
-/*--------- delete button ----- */
-.delete{
-     margin: 7px;
-     font-size: 15px;
-     border-radius: 6px;
-}
-.delete:hover{
-background-color: #c71610;
-cursor: pointer;
-height: 40px;
-width: 120px;
-}
 /*home page animation*/
 
 #home-content {
@@ -196,7 +184,7 @@ h2 {
   background-color: #ccc;
 }
 
-.unsub-container a {
+.unsub-container a, .unsub-container div {
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: 700;
@@ -209,9 +197,10 @@ h2 {
   color: #000;
 }
 
-.unsub-container a:hover {
+.unsub-container a:hover, .unsub-container div:hover {
   color: #c71610;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 /* FOOTER */
 footer li {

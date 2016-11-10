@@ -6,9 +6,6 @@
   var from;
   var allIds;
   var accessToken;
-  authDelete.offEventListner = function(element){
-    webDB.execute('DELETE allIds FROM senderIds WHERE sender = ' + from);
-  };
   authDelete.checkAuth = function() {
     gapi.auth.authorize(
       {
@@ -40,7 +37,8 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            document.getElementById(from).setAttribute( 'onClick', 'authDelete.offEventListner(this);' );
+            document.getElementById(from).setAttribute('onClick', 'emailNo.offEventListner(this);');
+            webDB.execute('UPDATE senderIds SET allIds = 0 WHERE sender = ' + '"' + from + '"');
           }
         }).fail(function(error){
           console.log(error);
