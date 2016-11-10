@@ -16,7 +16,7 @@
       'data': [from, ids.length, ids]
     }]);
   };
-  var insert = function(){
+  senderIdsTable.insert = function(){
     webDB.execute('SELECT * FROM senderIds', function(all){
       if(all.length){
         all.forEach(function(item){
@@ -35,6 +35,6 @@
     });
   }
   createTableD();
-  insert();
+  senderIdsTable.insert();
   module.senderIdsTable = senderIdsTable;
 })(window);
