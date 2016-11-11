@@ -138,11 +138,38 @@ h2 {
   display: inline;
   height: 6em;
   width: 6em;
-  margin-top: 3.5%;
+  margin-top: 3%;
   margin-left: 80%;
   border-radius: 3em;
 }
-/* --- Unsubscribe List -- */
+/*------------ unique emails no ------------*/
+#number{
+  display: inline-block;
+  height: 5em;
+  width: 5em;
+  border-radius: 5em;
+  transition: transform 1.8s;
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 10%;
+}
+#number > div{
+font-weight: bold;
+font-size: 30px;
+font-weight: bold;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+text-align: center;
+margin-top: 34%;
+}
+#profile > p{
+font-size: 30px;
+font-weight: bold;
+text-align: center;
+position: absolute;
+top: 13%;
+left: 25%;
+}
+/* -------- Unsubscribe List -- */
 #unsubscribe-page {
  background-color: #eee;
  border-radius: 2em;;

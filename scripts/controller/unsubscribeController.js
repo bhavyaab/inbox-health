@@ -22,6 +22,7 @@
       ]);
     location.reload();
     page('/');
+    localStorage.clear();
   };
 
   module.unsubscribeController = unsubscribeController;

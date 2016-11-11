@@ -19,7 +19,12 @@
   createTable();
   webDB.execute('SELECT * FROM profileTable', function(profile) {
     if (profile.length) {
-      document.getElementById('profile-image').src = profile[0].imageUrl;
+      try{
+        document.getElementById('profile-image').src = profile[0].imageUrl;
+      }
+      catch(e) {
+        document.getElementById('profile-image').src = "img/photo.jpg";
+      }
     }});
   module.profileTable = profileTable;
 })(window);

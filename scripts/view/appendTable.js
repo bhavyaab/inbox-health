@@ -21,6 +21,8 @@
         $('#unsubscribe-page ul').append(template(uniqueObj));
         $('#logout-button').fadeIn();
         document.getElementById('profile-image').src = profile.imageUrl;
+        anim.addValue('uniqueSenderNo');
+        anim.insert('uniqueSenderNo');
       };
     };
   };
