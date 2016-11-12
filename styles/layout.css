@@ -21,6 +21,8 @@ header {
 nav ul {
   display: flex;
   flex-direction: row;
+  position: absolute;
+  right: 2em;
 }
 
 main {

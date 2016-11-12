@@ -22,13 +22,14 @@ anim.getRandomColor = function() {
 };
 anim.insert = function(key){
   var value = localStorage.getItem(key);
-  $('#number div').html(value);
+  $('#number').html(value);
   if(value > 1){
     $('#profile p').html('Unique senders');
   }
   if(localStorage.getItem('senderIdsTable.all') === value){
-    $('#number').css('border-color', '#eee');
+    // $('#number').css('border-color', '#945');
   }else{
+    // $('#number').css('border-color', '#344');
     $('#profile div').css('color', anim.getRandomColor());
   };
 };

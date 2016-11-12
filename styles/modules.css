@@ -136,38 +136,31 @@ h2 {
 }
 #profile > img{
   display: inline;
-  height: 6em;
-  width: 6em;
-  margin-top: 3%;
-  margin-left: 80%;
+  height: 3em;
+  width: 3em;
+  position: absolute;
+  top: 13vh;
+  left: calc(50% - 1.5em);
   border-radius: 3em;
 }
 /*------------ unique emails no ------------*/
 #number{
   display: inline-block;
-  height: 5em;
-  width: 5em;
-  border-radius: 5em;
-  transition: transform 1.8s;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   position: absolute;
-  margin-top: 2%;
-  margin-left: 10%;
+  top: 18.3vh;
+  left: calc(50% - 28vw);
 }
-#number > div{
-font-weight: bold;
-font-size: 30px;
-font-weight: bold;
-font-family: "Trebuchet MS", Helvetica, sans-serif;
-text-align: center;
-margin-top: 34%;
-}
-#profile > p{
-font-size: 30px;
-font-weight: bold;
-text-align: center;
-position: absolute;
-top: 13%;
-left: 25%;
+#profile p{
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 18vh;
+  left: calc(50% - 16vw);
+  align-self: center
 }
 /* -------- Unsubscribe List -- */
 #unsubscribe-page {
@@ -218,6 +211,7 @@ left: 25%;
   color: #000;
   margin-left: 33px;
   margin-top: 12px;
+  margin-bottom: 10px;
 }
 
 .icon-cross {
@@ -245,6 +239,19 @@ footer h3 {
 
 /* MEDIA QUERIES
 ========================= */
+@media screen and (min-width: 440px) {
+
+/*  PROFILE
+============================*/
+#profile P{
+  left: calc(50% - 11vw);
+}
+#profile div{
+  left: calc(50% - 20vw);
+}
+
+}
+
 
 @media screen and (min-width: 640px) {
 
@@ -278,6 +285,22 @@ footer h3 {
     display: flex;
     justify-content: flex-end;
   }
+  /*  profile
+  ========================================*/
+
+  #profile img{
+    height: 5em;
+    width: 5em;
+    left: calc(50% - -9.5em);
+  }
+  #profile P {
+      left: calc(50% - 30vw);
+      top: 18vh;
+  }
+  #profile div {
+      top: 14.3vh;
+      left: calc(50% - 20vw);
+  }
 
 }
 
@@ -293,9 +316,36 @@ footer h3 {
     flex-direction: row;
     justify-content: space-between;
   }
-  /* HEADER LOGO */
+
+  /*profile
+  ======================*/
+  #profile div {
+    top: 15.3vh;
+    left: calc(50% - 34vw);
 }
-@media only screen and (min-width: 480px) {
+#profile P {
+    left: calc(50% - 30vw);
+    top: 15vh;
+}
+}
+@media only screen and (min-width: 960px) {
+  #profile p{
+    left: calc(50% - 24vw);
+  }
+  #profile div{
+    left: calc(50% - 28vw);
+  }
+}
+@media only screen and (min-width: 960px) {
+  #profile p{
+    left: calc(40%);
+    }
+    #profile div{
+      left: calc(35%);
+    }
+}
+@media only screen and (min-width: 640px) {
+  /* HEADER LOGO */
   #fullLogo {
     display: block;
   }
@@ -305,8 +355,6 @@ footer h3 {
   .full-nav {
     display: block;
   }
-}
-@media only screen and (min-width: 640px) {
   .text-box h1 {
     font-size: 35px;
   }
