@@ -27,9 +27,7 @@ anim.insert = function(key){
     $('#profile p').html('Unique senders');
   }
   if(localStorage.getItem('senderIdsTable.all') === value){
-    // $('#number').css('border-color', '#945');
   }else{
-    // $('#number').css('border-color', '#344');
     $('#profile div').css('color', anim.getRandomColor());
   };
 };
