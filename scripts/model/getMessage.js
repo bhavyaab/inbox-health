@@ -9,7 +9,7 @@
     request.execute(function(resp) {
       output.generateInfo(resp);
     });
+    anim.addValue('emailPulled');
   };
-
   module.getMessages = getMessages;
 })(window);

@@ -1,5 +1,6 @@
 (function(module){
   var senderIdsTable = {};
+  var count = 0;
   createTableD = function(){
     webDB.execute(
      'CREATE TABLE IF NOT EXISTS senderIds(' +
@@ -15,10 +16,13 @@
       'VALUES(?,?,?);',
       'data': [from, ids.length, ids]
     }]);
+    count++;
+    localStorage.setItem('senderIdsTable.all', count);
   };
   senderIdsTable.insert = function(){
     webDB.execute('SELECT * FROM senderIds', function(all){
       if(all.length){
+      localStorage.setItem('senderIdsTable.all', all.length);
         all.forEach(function(item){
           if(item.allIds === "0"){
             if(item.emailsNo === 1){
@@ -31,7 +35,7 @@
             emailNo.allEmails(item.sender, item.emailsNo);
           }
         });
-      }
+      };
     });
   }
   createTableD();
