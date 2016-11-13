@@ -1,14 +1,19 @@
-(
- function(module){
-   var profile = {};
-   profile.info = function(){
+(function(module){
+  var profile = {};
+  profile.displayName;
+  profile.imageUrl;
+  profile.profileUrl;
+  profile.info = function(){
     var request = gapi.client.plus.people.get({
-   'userId': 'me'
- });
- request.execute(function(resp) {
-   console.log('Retrieved profile for:' + resp.displayName);
- });
-   };
- }
- module.profile = profile;
-)(window);
+      'userId' : 'me'
+    });
+
+    request.execute(function(resp) {
+      profile.displayName = resp.displayName;
+      profile.imageUrl = resp.image.url;
+      profile.profileUrl = resp.url;
+      profileTable.createTable(profile.displayName, profile.imageUrl, profile.profileUrl);
+    });
+  };
+  (module).profile = profile;
+})(window);

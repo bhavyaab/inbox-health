@@ -9,17 +9,17 @@
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
     <script id="unsubscribe-template" type="text/x-handlebars-template">
-      <li>
+      <div>
         <div class="flex-container">
           <div class="name-container">
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
-           <button id="{{sender}}" class="delete" onclick="authDelete.handleAuthClick(this)">Delete</button>
+           <div id="{{sender}}" onclick="authDelete.handleAuthClick(this)"> Delete </div>
             <a href="{{unsubscribe}}" target="_blank">Unsubscribe</a>
           </div>
         </div>
-     </li>
+     </div>
     </script>
     <title>inbox-health</title>
   </head>
@@ -58,6 +58,11 @@
   <!-- //UNSUBSCRIBE PAGE// -->
 
         <section id="unsubscribe-page" class="tab-content">
+          <div id="profile">
+            <div id="number">0</div>
+            <p>Unique sender.</p>
+            <img id="profile-image">
+          </div>
           <ul></ul>
         </section>
 
@@ -114,22 +119,25 @@
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <!-- //MODEL FILES// -->
-    <script src="scripts/model/table.js"></script>
-    <script src="scripts/model/senderIdsTable.js"></script>
+    <script type="text/javascript" src="scripts/model/profileTable.js"></script>
+    <script type="text/javascript" src="scripts/model/emailsNo.js"></script>
+    <script type="text/javascript" src="scripts/model/table.js"></script>
+    <script type="text/javascript" src="scripts/model/senderIdsTable.js"></script>
     <script type="text/javascript" src="scripts/model/getMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
     <!-- //CONTROLLER FILES// -->
-    <script src="scripts/controller/profile.js"></script>
-    <script src="scripts/controller/homeController.js"></script>
-    <script src="scripts/controller/aboutController.js"></script>
-    <script src="scripts/controller/unsubscribeController.js"></script>
-    <script src="scripts/controller/routes.js"></script>
+    <script type="text/javascript" src="scripts/controller/profile.js"></script>
+    <script type="text/javascript" src="scripts/controller/homeController.js"></script>
+    <script type="text/javascript" src="scripts/controller/aboutController.js"></script>
+    <script type="text/javascript" src="scripts/controller/unsubscribeController.js"></script>
+    <script type="text/javascript" src="scripts/controller/routes.js"></script>
     <script type="text/javascript" src="scripts/controller/auth&delete.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
 
   <!-- //VIEW FILES// -->
+    <script type="text/javascript" src="scripts/view/animation.js"></script>
     <script type="text/javascript" src="scripts/view/appendTable.js"></script>
   </body>
 </html>
