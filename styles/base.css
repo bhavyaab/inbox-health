@@ -25,4 +25,10 @@ footer {
   padding: 20px;
   clear: both;
   font-family: 'Open Sans';
+  margin-top: -1px;
+  margin-bottom: auto;
+  background-color: black;
+  color: white;
+  max-width: 960px;
+  align-self: center;
 }
