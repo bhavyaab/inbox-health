@@ -44,6 +44,29 @@ nav {
     text-align: center;
     width: 100%;
 }
+.containerBox2{
+  background-color: #939393;
+  text-align: center;
+  padding-top: 88px;
+  margin-top: -1px;
+}
+.containerBox2 h2{
+  color: hsla(0,0%,100%,.8);
+  letter-spacing: 0;
+  line-height: 46px;
+  margin-bottom: 54px;
+}
+.containerBox2 img{
+  width: 64%;
+  max-width: 800px;
+}
+#curve{
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: #939393;
+}
 /* --- About Layout --- */
 
 .spacing-bar {
