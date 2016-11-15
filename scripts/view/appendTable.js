@@ -11,9 +11,9 @@
 
   append.generateData = function(id, from, unsubscribe, senderName) {
     if(unsubscribe){
-      if(lookUpTable.hasOwnProperty(senderName)){}
+      if(lookUpTable.hasOwnProperty(from)){}
       else{
-        lookUpTable[senderName] = true;
+        lookUpTable[from] = true;
         var uniqueObj = new GetInfo(id, from, unsubscribe, senderName);
         listDelete.listMessages(from, senderName);
         table.createEmail(uniqueObj);
@@ -21,6 +21,8 @@
         $('#unsubscribe-page ul').append(template(uniqueObj));
         $('#logout-button').fadeIn();
         document.getElementById('profile-image').src = profile.imageUrl;
+        anim.addValue('uniqueSenderNo');
+        anim.insert('uniqueSenderNo');
       };
     };
   };

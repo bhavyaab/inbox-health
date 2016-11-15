@@ -6,9 +6,6 @@
   var from;
   var allIds;
   var accessToken;
-  authDelete.offEventListner = function(element){
-    webDB.execute('DELETE allIds FROM senderIds WHERE sender = ' + from);
-  };
   authDelete.checkAuth = function() {
     gapi.auth.authorize(
       {
@@ -40,7 +37,8 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            document.getElementById(from).setAttribute( 'onClick', 'authDelete.offEventListner(this);' );
+            webDB.execute('UPDATE senderIds SET allIds = 0 WHERE sender = ' + '"' + from + '"');
+            senderIdsTable.insert();
           }
         }).fail(function(error){
           console.log(error);
@@ -54,9 +52,9 @@
           callApi();
         }while(allIds.length > 1000);
       } else {
-        console.log('you have requestData ' + allIds.length + ' emails');
         requestData = {ids : allIds};
         callApi();
+<<<<<<< HEAD
         if(allIds.length > 1){
           // alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
           wal({
@@ -74,6 +72,12 @@
         }else{
           alertS.alert();
           // alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+=======
+        if(allIds.length === 1){
+          alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+        }else{
+          alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+>>>>>>> 62d8f1b4e221ccce078c6c5584e93cd6c5879ab7
         };
       };
     });
@@ -94,6 +98,5 @@
     }
     );
   };
-
   module.authDelete = authDelete;
 })(window);
