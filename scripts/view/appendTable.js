@@ -21,6 +21,7 @@
         $('#unsubscribe-page ul').append(template(uniqueObj));
         $('#logout-button').fadeIn();
         document.getElementById('profile-image').src = profile.imageUrl;
+        document.getElementById('profile-name').innerHTML = profile.displayName;
         anim.addValue('uniqueSenderNo');
         anim.insert('uniqueSenderNo');
       };

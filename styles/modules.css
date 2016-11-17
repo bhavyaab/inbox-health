@@ -40,7 +40,7 @@ main h3 {
   margin-top: 35px;
 }
 /*home page animation*/
-#home-content{
+#slide{
     position: absolute;
     margin: 0 auto;
     width: 100%;
@@ -344,6 +344,9 @@ footer h3 {
     #profile div{
       left: calc(35%);
     }
+   #profile > img, #profile-name{
+     left: calc(50% + 238px);
+   }
 }
 @media only screen and (min-width: 640px) {
   /* HEADER LOGO */
