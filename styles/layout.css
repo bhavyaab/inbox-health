@@ -126,13 +126,13 @@ nav {
 }
 /* FOOTER */
 
-footer ul {
+/*footer ul {
   position: fixed;
   top: 190%;
-  /*list-style-type: none;*/
-  /*display: flex;*/
-  /*flex-direction: row;*/
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   margin-top: 5px;
   font-family: 'Open Sans';
-}
+}*/

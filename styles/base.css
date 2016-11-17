@@ -23,7 +23,7 @@ p {
 footer {
   width: 100%;
   padding: 20px;
-  clear: both;
+  /*clear: both;*/
   font-family: 'Open Sans';
   margin-top: -1px;
   margin-bottom: auto;

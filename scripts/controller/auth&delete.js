@@ -54,30 +54,10 @@
       } else {
         requestData = {ids : allIds};
         callApi();
-<<<<<<< HEAD
-        if(allIds.length > 1){
-          // alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
-          wal({
-            title: 'Are you sure?',
-            text: 'You will not be able to recover these eamils!',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#DD6B55',
-            confirmButtonText: 'Yes, delete it!',
-            closeOnConfirm: false
-          },
-       function(){
-         swal('Deleted!', 'Your emails has been deleted.', 'success');
-       });
-        }else{
-          alertS.alert();
-          // alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
-=======
         if(allIds.length === 1){
-          alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+          alert('you have deleted ' + allIds.length + ' email from this sender ' + from);
         }else{
-          alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
->>>>>>> 62d8f1b4e221ccce078c6c5584e93cd6c5879ab7
+          alert('you have deleted ' + allIds.length + ' emails from this sender ' + from);
         };
       };
     });
