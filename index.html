@@ -8,11 +8,12 @@
     <link href="styles/base.css" rel="stylesheet">
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/565035b7e4.js"></script>
     <script id="unsubscribe-template" type="text/x-handlebars-template">
       <div>
         <div class="flex-container">
-          <div class="name-container">
-            <p onmouseover="this.innerHTML='{{sender}}';" onmouseout="this.innerHTML='{{senderName}}';">{{senderName}}</p>
+          <div class="name-container"onmouseover="this.innerHTML='<p>{{sender}}</p>';" onmouseout="this.innerHTML='<p>{{senderName}}</p>';">
+            <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
            <div id="{{sender}}" onclick="authDelete.handleAuthClick(this)"> Delete </div>
@@ -62,9 +63,7 @@
              <div class="containerBox2">
               <h1>Focus on what matters</h1>
               <h2>
-               <span>Unsubscribe from junk emails.
-                <br>
-                <span>Delete all emails in a single click.
+               <span>Unsubscribe your self from junk emails
                 <br>
                </span>
                <span> Totally new clean inbox.
@@ -104,22 +103,75 @@
             <div class="flex-wrapper flex-wrapper-viewport">
               <div class="student">
                 <h3>Rae H.</h3>
-                <img src="img/raeh-bio.jpg">
+                <div class="f1_container">
+                 <div class="f1_card" class="shadow">
+                  <div class="front face">
+                   <img src="img/raeh-bio.jpg">
+                  </div>
+                  <div class="back face center" style="background-color: #767674;">
+                   <div class="icons">
+                    <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                   </div>
+                   <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg);">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Rae Helsel grew up in Wenatchee, WA, but calls Seattle home. She started intro web design classes in her graduate degree for photography, and then decided to pursue it more thoroughly with Code Fellows in August, 2016. All her spare time includes yoga, coffee, and music.</p>
+                <!-- <img src="img/raeh-bio.jpg"> -->
               </div>
               <div class="student">
                 <h3>Bhavya B.</h3>
-                <img src="img/bhavyab-bio.jpg">
+                <div class="f1_container">
+                 <div class="f1_card" class="shadow">
+                  <div class="front face">
+                   <img src="img/bhavyab-bio.jpg">
+                  </div>
+                  <div class="back face center" style="background-color:#94c8d3;">
+                     <div class="icons">
+                      <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+                      <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                     </div>
+                     <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg);">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Bhavya grewup in India, moves to seattle in 2012.  She started persuing web developer career  with code fellows in 2016.  Her spare time includes music, yummy food.</p>
               </div>
               <div class="student">
                 <h3>Steven B.</h3>
-                <img src="img/stevenb-bio.png">
+                <div class="f1_container">
+                 <div class="f1_card" class="shadow">
+                  <div class="front face">
+                   <img src="img/stevenb-bio.png">
+                  </div>
+                  <div class="back face center" style="background-color: #ba864c;">
+                   <div class="icons">
+                    <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                   </div>
+                   <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg);">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Steven comes from a background of voice acting, game design, video editing, and retail. He entered into Code Fellows with some previous experience with C++ and Ruby and has made a smooth transition into learning HTML, CSS, and JavaScript.</p>
               </div>
               <div class="student">
                 <h3>Adrian M.</h3>
-                <img src="img/adrianm-bio.jpg">
+                <div class="f1_container">
+                 <div class="f1_card" class="shadow">
+                  <div class="front face">
+                   <img src="img/adrianm-bio.jpg">
+                  </div>
+                  <div class="back face center" style="background-color: #8a685c;">
+                   <div class="icons">
+                    <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                   </div>
+                   <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg);">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Adrian currently resides in Tacoma, WA. He’s got a small background with web development when he was in high school but soon got overwhelmed by how much has changed since then. Hence why he’s at CodeFellows learning all the leet coding skills. A way to win over his friendship is bringing him Timbits or Tim Hortons Coffee.</p>
               </div>
             </div>
