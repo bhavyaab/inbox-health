@@ -13,8 +13,8 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
-
 p {
   line-height: 1.5em;
 }
@@ -30,5 +30,5 @@ footer {
   color: white;
   max-width: 960px;
   align-self: center;
-  align-items: flex-end; 
+  align-items: flex-end;
 }
