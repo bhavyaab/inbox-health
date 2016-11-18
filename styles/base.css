@@ -13,8 +13,8 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
-
 p {
   line-height: 1.5em;
 }
@@ -23,6 +23,12 @@ p {
 footer {
   width: 100%;
   padding: 20px;
-  clear: both;
   font-family: 'Open Sans';
+  margin-top: -1px;
+  margin-bottom: auto;
+  background-color: black;
+  color: white;
+  max-width: 960px;
+  align-self: center;
+  align-items: flex-end;
 }

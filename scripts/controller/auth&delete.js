@@ -55,9 +55,9 @@
         requestData = {ids : allIds};
         callApi();
         if(allIds.length === 1){
-          alert('you have deleted ' + allIds.length + ' email ftom this sender ' + from);
+          alert('you have deleted ' + allIds.length + ' email from this sender ' + from);
         }else{
-          alert('you have deleted ' + allIds.length + ' emails ftom this sender ' + from);
+          alert('you have deleted ' + allIds.length + ' emails from this sender ' + from);
         };
       };
     });

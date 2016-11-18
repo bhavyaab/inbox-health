@@ -21,6 +21,7 @@
     if (profile.length) {
       try{
         document.getElementById('profile-image').src = profile[0].imageUrl;
+        document.getElementById('profile-name').innerHTML = profile[0].displayName;
       }
       catch(e) {
         document.getElementById('profile-image').src = "img/photo.jpg";
