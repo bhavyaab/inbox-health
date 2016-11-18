@@ -105,7 +105,6 @@ nav {
 }
 
 /* --- Unsubscribe List Layout --- */
-
 .letter {
   display: flex;
   justify-content: center;
@@ -142,3 +141,6 @@ nav {
   margin-top: 5px;
   font-family: 'Open Sans';
 }*/
+#hakkyFix{
+ margin-top: 200vh;
+}

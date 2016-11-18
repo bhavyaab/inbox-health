@@ -12,7 +12,7 @@
       <div>
         <div class="flex-container">
           <div class="name-container">
-            <p>{{senderName}}</p>
+            <p onmouseover="this.innerHTML='{{sender}}';" onmouseout="this.innerHTML='{{senderName}}';">{{senderName}}</p>
           </div>
           <div class="unsub-container">
            <div id="{{sender}}" onclick="authDelete.handleAuthClick(this)"> Delete </div>
