@@ -26,6 +26,7 @@ nav ul {
 main {
   max-width: 960px;
   margin: 0 auto;
+  min-height: 100%;
 }
 nav {
   display: flex;
@@ -128,14 +129,3 @@ nav {
   padding: 10px;
 }
 /* FOOTER */
-
-/*footer ul {
-  position: fixed;
-  top: 190%;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 5px;
-  font-family: 'Open Sans';
-}*/

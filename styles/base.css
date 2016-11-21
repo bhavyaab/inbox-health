@@ -30,5 +30,6 @@ footer {
   color: white;
   max-width: 960px;
   align-self: center;
-  align-items: flex-end;
+  position: absolute;
+  top: 175vh;
 }
