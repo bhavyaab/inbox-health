@@ -144,6 +144,7 @@ h2 {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 1.0s linear;
+  border-radius:100px;
 }
 .f1_container:hover .f1_card {
   transform: rotateY(180deg);
@@ -271,12 +272,6 @@ h2 {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-/* FOOTER */
-/*footer li {
-  margin: 25px;
-  padding: 0;
-}*/
-
 footer h3 {
   font-family: 'Open Sans';
   font-size: 17px;
@@ -285,6 +280,12 @@ footer h3 {
 
 /* MEDIA QUERIES
 ========================= */
+@media screen  and (max-width: 500px){
+ nav li:last-child {
+   position: absolute;
+   right: 30px;
+}
+}
 @media screen and (min-width: 440px) {
 
 /*  PROFILE
@@ -375,7 +376,7 @@ footer h3 {
   ======================*/
   #profile div {
    top: 22%;
-   left: calc(42%);
+   left: calc(45%);
 }
 }
 @media only screen and (min-width: 960px) {
