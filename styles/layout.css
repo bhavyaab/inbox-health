@@ -37,12 +37,49 @@ nav {
     display: inline-block;
     width: 100%;
     height: 90vh;
+    margin-top: -1px;
 }
 .text-box {
     position: absolute;
     height: 100%;
     text-align: center;
     width: 100%;
+}
+/* home Info*/
+#home-info{
+ max-width: 960px;
+ width: 100%;
+}
+/** SVG **/
+.headerCurve{
+  margin-bottom: -1px;
+  width: 100%;
+  height: 70px;
+  margin-top: -20px;
+}
+
+.containerBox2{
+  color: #444;
+  text-align: center;
+  padding-top: 88px;
+  margin-top: -1px;
+  margin-bottom: -10px;
+}
+.containerBox2 h2{
+  letter-spacing: 0;
+  line-height: 46px;
+  margin-bottom: 54px;
+}
+.containerBox2 img{
+  width: 64%;
+  max-width: 800px;
+}
+#curve{
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: #939393;
 }
 /* --- About Layout --- */
 
@@ -89,14 +126,3 @@ nav {
   padding: 10px;
 }
 /* FOOTER */
-
-/*footer ul {
-  position: fixed;
-  top: 190%;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 5px;
-  font-family: 'Open Sans';
-}*/

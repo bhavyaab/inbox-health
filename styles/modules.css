@@ -40,7 +40,7 @@ main h3 {
   margin-top: 35px;
 }
 /*home page animation*/
-#home-content{
+#slide{
     position: absolute;
     margin: 0 auto;
     width: 100%;
@@ -130,7 +130,7 @@ h2 {
  cursor: pointer;
 }
 
-/*==================== flip image property ====================*/
+/* flip image property */
 .f1_container {
   position: relative;
   margin: 10px auto;
@@ -142,9 +142,9 @@ h2 {
 .f1_card {
   width: 100%;
   height: 100%;
-  border-radius:100px;
   transform-style: preserve-3d;
   transition: all 1.0s linear;
+  border-radius:100px;
 }
 .f1_container:hover .f1_card {
   transform: rotateY(180deg);
@@ -273,11 +273,6 @@ h2 {
   cursor: pointer;
 }
 /* FOOTER */
-/*footer li {
-  margin: 25px;
-  padding: 0;
-}*/
-
 footer h3 {
   font-family: 'Open Sans';
   font-size: 17px;
@@ -286,6 +281,12 @@ footer h3 {
 
 /* MEDIA QUERIES
 ========================= */
+@media screen  and (max-width: 500px){
+ nav li:last-child {
+   position: absolute;
+   right: 30px;
+}
+}
 @media screen and (min-width: 440px) {
 
 /*  PROFILE
@@ -376,7 +377,11 @@ footer h3 {
   ======================*/
   #profile div {
    top: 22%;
-   left: calc(42%);
+   left: calc(45%);
+}
+/* FOOTER */
+footer{
+ margin-top: 0.8vh;
 }
 }
 @media only screen and (min-width: 960px) {
@@ -388,6 +393,10 @@ footer h3 {
     }
    #profile > img, #profile-name{
      left: calc(50% + 238px);
+   }
+   /* FOOTER */
+   footer{
+    margin-top: 1.1vh;
    }
 }
 @media only screen and (min-width: 640px) {
