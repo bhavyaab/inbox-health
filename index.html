@@ -12,7 +12,8 @@
     <script id="unsubscribe-template" type="text/x-handlebars-template">
       <div>
         <div class="flex-container">
-          <div class="name-container"onmouseover="this.innerHTML='<p>{{sender}}</p>';" onmouseout="this.innerHTML='<p>{{senderName}}</p>';">
+          <div class="name-container"
+          onmouseenter="this.innerHTML='<p>{{sender}}</p>';" onmouseleave="this.innerHTML='<p>{{senderName}}</p>';">
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
