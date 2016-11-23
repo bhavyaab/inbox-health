@@ -5,6 +5,7 @@
     <link href="vendor/styles/reset.css" rel="stylesheet">
     <link href="vendor/styles/icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vendor/styles/sweetalert.css">
     <link href="styles/base.css" rel="stylesheet">
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
@@ -17,7 +18,7 @@
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
-           <div id="{{sender}}" onclick="authDelete.handleAuthClick(this)"> Delete </div>
+           <div id="{{sender}}" onclick="deleteBatch.batch(this)"> Delete </div>
             <a href="{{unsubscribe}}" target="_blank">Unsubscribe</a>
           </div>
         </div>
@@ -186,6 +187,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="vendor/scripts/sweetalert.min.js"></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
@@ -198,12 +200,13 @@
     <script type="text/javascript" src="scripts/model/listMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
     <!-- //CONTROLLER FILES// -->
+    <script type="text/javascript" src="scripts/controller/confirmAlert.js"></script>
+    <script type="text/javascript" src="scripts/controller/deleteBatch.js"></script>
     <script type="text/javascript" src="scripts/controller/profile.js"></script>
     <script type="text/javascript" src="scripts/controller/homeController.js"></script>
     <script type="text/javascript" src="scripts/controller/aboutController.js"></script>
     <script type="text/javascript" src="scripts/controller/unsubscribeController.js"></script>
     <script type="text/javascript" src="scripts/controller/routes.js"></script>
-    <script type="text/javascript" src="scripts/controller/auth&delete.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
 

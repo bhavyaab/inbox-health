@@ -137,7 +137,7 @@ h2 {
   width: 150px;
   height: 150px;
   z-index: 1;
-  perspective: 1000;
+  perspective: 100;
 }
 .f1_card {
   width: 100%;
