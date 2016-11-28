@@ -26,6 +26,7 @@
         }).fail(function(error){
           console.log(error);
           localStorage.removeItem('from');
+          something.wentWrong();
         });
       };
       var requestData;

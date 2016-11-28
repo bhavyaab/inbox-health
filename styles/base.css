@@ -31,6 +31,4 @@ footer {
   max-width: 960px;
   align-self: center;
   display: block;
-  justify-content: flex-end;
-  margin-top: 1vh;
 }
