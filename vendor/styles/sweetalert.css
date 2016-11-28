@@ -21,7 +21,7 @@ body.stop-scrolling {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 478px;
   padding: 17px;
-  border-radius: 5px;
+  border: 1px solid black;
   text-align: center;
   position: fixed;
   left: 50%;
@@ -39,7 +39,7 @@ body.stop-scrolling {
       left: 15px;
       right: 15px; } }
   .sweet-alert h2 {
-    color: #575757;
+    color: #000;
     font-size: 30px;
     text-align: center;
     font-weight: 600;
@@ -50,7 +50,7 @@ body.stop-scrolling {
     line-height: 40px;
     display: block; }
   .sweet-alert p {
-    color: #797979;
+    color: #000;
     font-size: 16px;
     text-align: center;
     font-weight: 300;
@@ -170,26 +170,26 @@ body.stop-scrolling {
     opacity: 0;
     visibility: hidden; }
   .sweet-alert button {
-    background-color: #8CD4F5;
-    color: white;
-    border: none;
+     background-color: #005B9D;
+    color: #000;
+    border: 1px solid black;
     box-shadow: none;
     font-size: 17px;
     font-weight: 500;
-    -webkit-border-radius: 4px;
-    border-radius: 5px;
+    /*-webkit-border-radius: 4px;*/
+    /*border-radius: 5px;*/
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
     cursor: pointer; }
     .sweet-alert button:focus {
       outline: none;
-      box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
+      box-shadow: 0 0 2px rgba(0, 91, 157,1), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
     .sweet-alert button:hover {
       background-color: #7ecff4; }
     .sweet-alert button:active {
       background-color: #5dc2f1; }
     .sweet-alert button.cancel {
-      background-color: #C1C1C1; }
+      background-color: #939393; }
       .sweet-alert button.cancel:hover {
         background-color: #b9b9b9; }
       .sweet-alert button.cancel:active {
@@ -223,7 +223,7 @@ body.stop-scrolling {
     position: relative;
     box-sizing: content-box; }
     .sweet-alert .sa-icon.sa-error {
-      border-color: #F27474; }
+      border-color: #B11000; }
       .sweet-alert .sa-icon.sa-error .sa-x-mark {
         position: relative;
         display: block; }
@@ -231,7 +231,7 @@ body.stop-scrolling {
         position: absolute;
         height: 5px;
         width: 47px;
-        background-color: #F27474;
+        background-color: #B11000;
         display: block;
         top: 37px;
         border-radius: 2px; }
@@ -244,7 +244,7 @@ body.stop-scrolling {
           transform: rotate(-45deg);
           right: 16px; }
     .sweet-alert .sa-icon.sa-warning {
-      border-color: #F8BB86; }
+      border-color: #B11000; }
       .sweet-alert .sa-icon.sa-warning .sa-body {
         position: absolute;
         width: 5px;
@@ -254,7 +254,7 @@ body.stop-scrolling {
         -webkit-border-radius: 2px;
         border-radius: 2px;
         margin-left: -2px;
-        background-color: #F8BB86; }
+        background-color: #B11000; }
       .sweet-alert .sa-icon.sa-warning .sa-dot {
         position: absolute;
         width: 7px;
@@ -264,7 +264,7 @@ body.stop-scrolling {
         margin-left: -3px;
         left: 50%;
         bottom: 10px;
-        background-color: #F8BB86; }
+        background-color: #B11000; }
     .sweet-alert .sa-icon.sa-info {
       border-color: #C9DAE1; }
       .sweet-alert .sa-icon.sa-info::before {
@@ -287,7 +287,7 @@ body.stop-scrolling {
         top: 19px;
         background-color: #C9DAE1; }
     .sweet-alert .sa-icon.sa-success {
-      border-color: #A5DC86; }
+      border-color: #1F9F46; }
       .sweet-alert .sa-icon.sa-success::before, .sweet-alert .sa-icon.sa-success::after {
         content: '';
         -webkit-border-radius: 40px;
@@ -320,7 +320,7 @@ body.stop-scrolling {
       .sweet-alert .sa-icon.sa-success .sa-placeholder {
         width: 80px;
         height: 80px;
-        border: 4px solid rgba(165, 220, 134, 0.2);
+        border: 4px solid rgba(31, 159, 70, 0.8);
         -webkit-border-radius: 40px;
         border-radius: 40px;
         border-radius: 50%;
@@ -341,7 +341,7 @@ body.stop-scrolling {
         transform: rotate(-45deg); }
       .sweet-alert .sa-icon.sa-success .sa-line {
         height: 5px;
-        background-color: #A5DC86;
+        background-color: #1F9F46;
         display: block;
         border-radius: 2px;
         position: absolute;
@@ -684,15 +684,15 @@ body.stop-scrolling {
 
 @-webkit-keyframes pulseWarning {
   0% {
-    border-color: #F8D486; }
+    border-color: ##F0B80D; }
   100% {
-    border-color: #F8BB86; } }
+    border-color: #B11000; } }
 
 @keyframes pulseWarning {
   0% {
-    border-color: #F8D486; }
+    border-color: ##F0B80D; }
   100% {
-    border-color: #F8BB86; } }
+    border-color: #B11000; } }
 
 .pulseWarning {
   -webkit-animation: pulseWarning 0.75s infinite alternate;
@@ -700,15 +700,15 @@ body.stop-scrolling {
 
 @-webkit-keyframes pulseWarningIns {
   0% {
-    background-color: #F8D486; }
+    background-color: ##F0B80D; }
   100% {
-    background-color: #F8BB86; } }
+    background-color: #B11000; } }
 
 @keyframes pulseWarningIns {
   0% {
-    background-color: #F8D486; }
+    background-color: ##F0B80D; }
   100% {
-    background-color: #F8BB86; } }
+    background-color: #B11000; } }
 
 .pulseWarningIns {
   -webkit-animation: pulseWarningIns 0.75s infinite alternate;
