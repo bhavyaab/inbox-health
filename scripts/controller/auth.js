@@ -32,9 +32,9 @@
   };
 
   auth.loadGmailApi = function() {
-    page('/unsubscribe');
     gapi.client.load('plus','v1', profile.info);
     gapi.client.load('gmail', 'v1', list.listMessages);
+    page('/unsubscribe');
   };
 
   module.auth = auth;
