@@ -28,7 +28,7 @@
             if(item.emailsNo === 1){
               document.getElementById(item.sender).innerHTML = item.emailsNo + ' email deleted';
             }else{
-              document.getElementById(item.sender).innerHTML = item.emailsNo + ' email deleted';
+              document.getElementById(item.sender).innerHTML = item.emailsNo + ' emails deleted';
             };
             document.getElementById(item.sender).setAttribute( 'onClick', 'emailNo.offEventListner(this);' );
           }else{

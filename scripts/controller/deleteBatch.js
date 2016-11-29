@@ -18,7 +18,6 @@
           headers: {'Content-Type': 'application/json'},
           data: JSON.stringify(requestData),
           success: function(){
-            document.getElementById(from).innerHTML = allIds.length + ' emails deleted';
             webDB.execute('UPDATE senderIds SET allIds = 0 WHERE sender = ' + '"' + from + '"');
             senderIdsTable.insert();
             localStorage.removeItem('from');
