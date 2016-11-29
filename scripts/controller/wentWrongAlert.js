@@ -2,8 +2,8 @@
   var something = {};
   something.wentWrong = function(){
     swal({
-      title: 'Opps!! Something went wrong!',
-      text: 'Your emails are not been deleted!! Logout and login again can fix it!',
+      title: 'Opps!!',
+      text: 'Something went wrong! Your emails are not been deleted!! Logout and login again can fix it!',
       type: 'error',
       showCancelButton: true,
       confirmButtonClass: 'btn-danger',

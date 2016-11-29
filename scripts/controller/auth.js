@@ -24,6 +24,7 @@
     }
   };
   auth.handleAuthClick = function(event) {
+    event.preventDefault();
     gapi.auth.authorize(
       {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
       auth.handleAuthResult);
@@ -33,6 +34,7 @@
   auth.loadGmailApi = function() {
     gapi.client.load('plus','v1', profile.info);
     gapi.client.load('gmail', 'v1', list.listMessages);
+    page('/unsubscribe');
   };
 
   module.auth = auth;
