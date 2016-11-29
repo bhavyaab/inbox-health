@@ -26,11 +26,6 @@
     if(value > 1){
       $('#profile p').html('Unique senders');
     }
-    if(localStorage.getItem('senderIdsTable.all') === value){
-      $('#profile div').css('color', '#000');
-    }else{
-      $('#profile div').css('color', anim.getRandomColor());
-    };
   };
   anim.insert('uniqueSenderNo');
   module.anim = anim;
