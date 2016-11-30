@@ -22,7 +22,7 @@
           request = gapi.client.gmail.users.messages.list({
             'userId': 'me',
             'pageToken': nextPageToken,
-            'q': from && 'unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out' || 'SafeUnsubscribe' || 'SafeUnsubscribe™',
+            'q': from && ('unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out' || 'SafeUnsubscribe' || 'SafeUnsubscribe™'),
           });
           getPageOfMessages(request, result);
         }else{
