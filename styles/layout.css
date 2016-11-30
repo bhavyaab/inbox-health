@@ -51,7 +51,6 @@ nav {
  width: 100%;
 }
 .row{
- height: 60vh;
  position: relative;
  }
  .right, .left{
@@ -76,7 +75,6 @@ nav {
  float: bottom;
 }
 .contact{
- height:20vh;
  width:100%;
  padding: 20px;
  margin-top: 20%;
@@ -126,7 +124,7 @@ nav {
   padding: 10px;
 }
 /* FOOTER */
-@media only screen and (min-width: 740px){
+@media only screen and (min-width: 640px){
  .row {
   height: 30vh;
  }
