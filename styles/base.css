@@ -1,3 +1,5 @@
+
+
 /* BASE STYLES
 ========================= */
 
@@ -13,8 +15,8 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
-
 p {
   line-height: 1.5em;
 }
@@ -23,6 +25,11 @@ p {
 footer {
   width: 100%;
   padding: 20px;
-  clear: both;
   font-family: 'Open Sans';
+  background-color: black;
+  color: white;
+  max-width: 960px;
+  display: block;
+  margin-left: calc(50% - 480px);
+  align-self: baseline;
 }

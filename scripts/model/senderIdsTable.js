@@ -22,13 +22,13 @@
   senderIdsTable.insert = function(){
     webDB.execute('SELECT * FROM senderIds', function(all){
       if(all.length){
-      localStorage.setItem('senderIdsTable.all', all.length);
+        localStorage.setItem('senderIdsTable.all', all.length);
         all.forEach(function(item){
-          if(item.allIds === "0"){
+          if(item.allIds === '0'){
             if(item.emailsNo === 1){
               document.getElementById(item.sender).innerHTML = item.emailsNo + ' email deleted';
             }else{
-              document.getElementById(item.sender).innerHTML = item.emailsNo + ' email deleted';
+              document.getElementById(item.sender).innerHTML = item.emailsNo + ' emails deleted';
             };
             document.getElementById(item.sender).setAttribute( 'onClick', 'emailNo.offEventListner(this);' );
           }else{
@@ -37,7 +37,7 @@
         });
       };
     });
-  }
+  };
   createTableD();
   senderIdsTable.insert();
   module.senderIdsTable = senderIdsTable;
