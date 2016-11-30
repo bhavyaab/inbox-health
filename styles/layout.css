@@ -50,6 +50,9 @@ nav {
  max-width: 960px;
  width: 100%;
 }
+hr{
+ color: #eee;
+}
 .row{
  position: relative;
  }
