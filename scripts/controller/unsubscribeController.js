@@ -20,7 +20,6 @@
         'DROP TABLE senderIds',
         'DROP TABLE profileTable'
       ]);
-    document.cookie = 'G_ENABLED_IDPS=; path=/; domain=.google.com; expires=' + new Date();
     location.reload();
     page('/');
     localStorage.clear();

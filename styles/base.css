@@ -29,6 +29,7 @@ footer {
   background-color: black;
   color: white;
   max-width: 960px;
-  align-self: center;
+  text-align: center;
   display: block;
+  margin-left: calc(50% - 480px);
 }
