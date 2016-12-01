@@ -20,16 +20,3 @@ a {
 p {
   line-height: 1.5em;
 }
-
-/* FOOTER */
-footer {
-  width: 100%;
-  padding: 20px;
-  font-family: 'Open Sans';
-  background-color: black;
-  color: white;
-  max-width: 960px;
-  display: block;
-  margin-left: calc(50% - 480px);
-  align-self: baseline;
-}
