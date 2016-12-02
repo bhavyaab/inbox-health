@@ -30,7 +30,7 @@
             }else{
               document.getElementById(item.sender).innerHTML = item.emailsNo + ' emails deleted';
             };
-            document.getElementById(item.sender).setAttribute( 'onClick', 'emailNo.offEventListner(this);' );
+            document.getElementById(item.sender).setAttribute( 'onClick', 'emailNo.offEventListner(this);');
           }else{
             emailNo.allEmails(item.sender, item.emailsNo);
           }
