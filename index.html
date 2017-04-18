@@ -5,17 +5,20 @@
     <link href="vendor/styles/reset.css" rel="stylesheet">
     <link href="vendor/styles/icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vendor/styles/sweetalert.css">
     <link href="styles/base.css" rel="stylesheet">
     <link href="styles/layout.css" rel="stylesheet">
     <link href="styles/modules.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/565035b7e4.js"></script>
     <script id="unsubscribe-template" type="text/x-handlebars-template">
       <div>
         <div class="flex-container">
-          <div class="name-container">
+          <div class="name-container"
+          onmouseenter="this.innerHTML='<p>{{sender}}</p>';" onmouseleave="this.innerHTML='<p>{{senderName}}</p>';">
             <p>{{senderName}}</p>
           </div>
           <div class="unsub-container">
-           <div id="{{sender}}" onclick="authDelete.handleAuthClick(this)"> Delete </div>
+           <div id="{{sender}}" onclick="deleteBatch.batch(this)"> Delete </div>
             <a href="{{unsubscribe}}" target="_blank">Unsubscribe</a>
           </div>
         </div>
@@ -41,7 +44,6 @@
           </ul>
         </nav>
       </header>
-
     <!-- //CONTENT// -->
 
       <main class="flex-content-wrapper">
@@ -49,12 +51,47 @@
           <div class="containerBox">
             <div class="text-box">
               <h1>WELCOME TO INBOX HEALTH</h1>
-              <h3 class="full-nav">Less stress. More room. Unsubscribe instantly from junk mail.</h3>
-              <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS</button></a></div>
+              <h3 class="full-nav">Less stress. More room. Unsubscribe and Delete instantly from junk mail.</h3>
+              <div id="authorize-div"><a href="/unsubscribe"><button id="authorize-button" onclick="auth.handleAuthClick(event)">GET YOUR EMAILS</button></a>
+              </div>
             </div>
           </div>
         </section>
+        <section id="home-info" class="tab-content">
+         <div class="row">
+          <hr width= "30%" >
+           <div class="left"><img src="img/1.png"></div>
+           <div class="right"><h3>Unique senders</h3><p>Inbox Health safely sniffs through the emails in your inbox and exposes the emails that are subscribed. Every unique sender is identified and listed at once in order to shortlist all senders, so you can easily make know and make design on them.</p></div>
+         </div>
+         <div class="row">
+          <hr width= "30%" >
+           <div class="left"><h3>Unsubscribe or Delete</h3><p>Once you've login with gmail, you have all list of unique senders and with each sender it shows numbers of email you have from that unique sender. You can easily delete all emails in a single click from here. Unsubscribe by clicking Unsubscribe.</p></div>
+           <div class="right">
+            <img src="img/2.png">
+           </div>
+         </div>
+         <div class="row">
+          <hr width= "30%" >
+           <div class="right">
+            <h3>Contact Us</h3>
+           <p style="padding-bottom: 10px;">Share us on Twitter linkedin and Facebook. If you run into any problems, please feel free to send us an email <a href="mailto:inboxhealth2016@gmail.com?Subject=Inbox-Health%20User%20Experiance%20Feedback" target="_top">@Inbox-Health</a></p>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Finbox-health.herokuapp.com%2F&layout=button&size=small&mobile_iframe=true&width=58&height=20&appId" width="58" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <a class="slack-button-widget" data-source="http://slackbutton.herokuapp.com/embed" href="http://slackbutton.herokuapp.com/post/new" target="_blank">Post to Slack</a>
 
+           </div>
+           <div class="left">
+            <img src="img/share.png">
+           </div>
+         </div>
+         <div class="contact">
+          <hr width= "30%" >
+          <div style="width:100%; padding: 20px;">
+           <h3 style="text-align:center;">Disclaimer</h3>
+           <p style="text-align:center;padding: 10px;">inbox-health  does not store, transfer, transmit or save any of your data.</p>
+          </div>
+         </div>
+        </section>
   <!-- //UNSUBSCRIBE PAGE// -->
 
         <section id="unsubscribe-page" class="tab-content">
@@ -62,6 +99,7 @@
             <div id="number">0</div>
             <p>Unique sender.</p>
             <img id="profile-image">
+            <li id="profile-name"></li>
           </div>
           <ul></ul>
         </section>
@@ -78,35 +116,86 @@
             <div class="flex-wrapper flex-wrapper-viewport">
               <div class="student">
                 <h3>Rae H.</h3>
-                <img src="img/raeh-bio.jpg">
+                <div class="f1_container">
+                 <div class="f1_card" >
+                  <div class="front face">
+                   <img src="img/raeh-bio.jpg">
+                  </div>
+                  <div class="back face center" style="background-color: #21211f;">
+                   <div class="icons">
+                    <a href="https://github.com/bhavyaab/inbox-health" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/rae-helsel" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                   </div>
+                   <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg); margin-left: 0.2em;">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Rae Helsel grew up in Wenatchee, WA, but calls Seattle home. She started intro web design classes in her graduate degree for photography, and then decided to pursue it more thoroughly with Code Fellows in August, 2016. All her spare time includes yoga, coffee, and music.</p>
               </div>
               <div class="student">
                 <h3>Bhavya B.</h3>
-                <img src="img/bhavyab-bio.jpg">
+                <div class="f1_container">
+                 <div class="f1_card" >
+                  <div class="front face">
+                   <img src="img/bhavyab-bio.jpg">
+                  </div>
+                  <div class="back face center" style="background-color:#94c8d3;">
+                     <div class="icons">
+                      <a href="https://github.com/bhavyaab/inbox-health" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+                      <a href="https://www.linkedin.com/in/bhavyabharti" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                     </div>
+                     <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg); margin-left: 0.2em;">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Bhavya grewup in India, moves to seattle in 2012.  She started persuing web developer career  with code fellows in 2016.  Her spare time includes music, yummy food.</p>
               </div>
               <div class="student">
                 <h3>Steven B.</h3>
-                <img src="img/stevenb-bio.png">
+                <div class="f1_container">
+                 <div class="f1_card" >
+                  <div class="front face">
+                   <img src="img/stevenb-bio.png">
+                  </div>
+                  <div class="back face center" style="background-color: #ba864c;">
+                   <div class="icons">
+                    <a href="https://github.com/bhavyaab/inbox-health" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/steven-bateman-012b8a127" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                   </div>
+                   <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg); margin-left: 0.2em;">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Steven comes from a background of voice acting, game design, video editing, and retail. He entered into Code Fellows with some previous experience with C++ and Ruby and has made a smooth transition into learning HTML, CSS, and JavaScript.</p>
               </div>
               <div class="student">
                 <h3>Adrian M.</h3>
-                <img src="img/adrianm-bio.jpg">
+                <div class="f1_container">
+                 <div class="f1_card" >
+                  <div class="front face">
+                   <img src="img/adrianm-bio.jpg">
+                  </div>
+                  <div class="back face center" style="background-color: #8a685c;">
+                   <div class="icons">
+                    <a href="https://github.com/bhavyaab/inbox-health" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/adrian-kenepah-martin-515a1251" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                   </div>
+                   <i class="fa fa-3x" aria-hidden="true" style="transform: rotate(90deg); margin-left: 0.2em;">)</i>
+                  </div>
+                 </div>
+                </div>
                 <p>Adrian currently resides in Tacoma, WA. He’s got a small background with web development when he was in high school but soon got overwhelmed by how much has changed since then. Hence why he’s at CodeFellows learning all the leet coding skills. A way to win over his friendship is bringing him Timbits or Tim Hortons Coffee.</p>
               </div>
             </div>
           </section>
         </div>
       </main>
-
-  <!-- //FOOTER// -->
-
-      <footer>
-        <h3>&#169 2016 Inbox Health Inc. All rights reserved.</h3>
-      </footer>
     </div>
+  <!-- //FOOTER// -->
+  <hr width= "30%" >
+  <div style="height:20vh; width:100%; padding: 20px;">
+     <p style="text-align:center;padding: 10px;">&#169 2016 Inbox Health Inc. All rights reserved.</p>
+  </div>
 
   <!-- //VENDOR FILES// -->
 
@@ -114,6 +203,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="http://slackbutton.herokuapp.com/widget.js" type="text/javascript"></script>
+    <script src="vendor/scripts/sweetalert.min.js"></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
@@ -126,12 +217,14 @@
     <script type="text/javascript" src="scripts/model/listMessage.js"></script>
     <script type="text/javascript" src="scripts/model/listMessageDelete.js"></script>
     <!-- //CONTROLLER FILES// -->
+    <script type="text/javascript" src="scripts/controller/wentWrongAlert.js"></script>
+    <script type="text/javascript" src="scripts/controller/confirmAlert.js"></script>
+    <script type="text/javascript" src="scripts/controller/deleteBatch.js"></script>
     <script type="text/javascript" src="scripts/controller/profile.js"></script>
     <script type="text/javascript" src="scripts/controller/homeController.js"></script>
     <script type="text/javascript" src="scripts/controller/aboutController.js"></script>
     <script type="text/javascript" src="scripts/controller/unsubscribeController.js"></script>
     <script type="text/javascript" src="scripts/controller/routes.js"></script>
-    <script type="text/javascript" src="scripts/controller/auth&delete.js"></script>
     <script type="text/javascript" src="scripts/controller/auth.js"></script>
     <script type="text/javascript" src="scripts/controller/userOutput.js"></script>
 

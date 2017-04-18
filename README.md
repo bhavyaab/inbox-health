@@ -23,13 +23,11 @@ a good experience regardless of device.
 
 MVP
 
-### Figure out what information we need from the API
-### Figure out how to access the information we need from the API
 ### Single-page index.html that properly loads the following pages:
 - Home page: login with Gmail account
 - Subscriptions page: list of all subscriptions associated with that user's account
--- Unsubscribe the user from anything they're subscribed to that they choose
--- Stretch goal: chart.js with number of e-mails received and unread
+- Unsubscribe the user from anything they're subscribed to that they choose
 - About page: description of what the app does and what the user can do with it
 - About contributors page?
+-- Stretch goal: chart.js with number of e-mails received and unread
 - Stretch goal: Google Analytics?

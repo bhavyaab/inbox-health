@@ -1,3 +1,5 @@
+
+
 /* BASE STYLES
 ========================= */
 
@@ -13,16 +15,8 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
-
 p {
   line-height: 1.5em;
-}
-
-/* FOOTER */
-footer {
-  width: 100%;
-  padding: 20px;
-  clear: both;
-  font-family: 'Open Sans';
 }

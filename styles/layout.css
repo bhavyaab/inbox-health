@@ -36,13 +36,51 @@ nav {
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 500px;
+    height: 100%;
 }
 .text-box {
     position: absolute;
     height: 100%;
     text-align: center;
     width: 100%;
+}
+/* home Info*/
+#home-info{
+ margin-top: 80vh;
+ max-width: 960px;
+ width: 100%;
+}
+hr{
+ color: #eee;
+}
+.row{
+ position: relative;
+ }
+ .right, .left{
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+ }
+ .right > img, .left > img{
+  height: 25vh;
+  width: 75vw;
+ }
+.right > p, .left > p{
+ padding: 2vw;
+}
+.right > h3, .left > h3{
+ padding-bottom: 10px;
+}
+.right{
+ float: top;
+}
+.left{
+ float: bottom;
+}
+.contact{
+ width:100%;
+ padding: 20px;
+ margin-top: 20%;
 }
 /* --- About Layout --- */
 
@@ -64,7 +102,6 @@ nav {
 }
 
 /* --- Unsubscribe List Layout --- */
-
 .letter {
   display: flex;
   justify-content: center;
@@ -89,13 +126,31 @@ nav {
 .unsub-container {
   padding: 10px;
 }
-/* FOOTER */
+@media only screen and (min-width: 640px){
+ .row {
+  height: 30vh;
+ }
+.right, .left{
+ width: 50%;
+ height: 40vh;
+}
+ .right > p, .left > p{
+  padding: 0vw;
+  text-align: left;
+ }
+ .right > h3, .left > h3{
+  text-align: left;
+ }
+ .right > img, .left > img {
+  height: 60%;
+  width: 80%;
+  margin-top: 20px;
+}
+ .right{
+  float: right;
+ }
+ .left{
+  float: left;
+ }
 
-footer ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 5px;
-  font-family: 'Open Sans';
 }
