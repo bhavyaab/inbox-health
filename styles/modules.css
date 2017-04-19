@@ -8,8 +8,8 @@ nav li:last-child {
   margin-right: 0px;
 }
 header img {
-  height: 90px;
   width: 300px;
+  height: 90px;
 }
 #fullLogo {
   display: none;
@@ -267,9 +267,8 @@ h2 {
 ========================= */
 @media screen  and (max-width: 500px){
  nav li:last-child {
-   /*position: absolute;*/
-   /*right: 30px;*/
-   text-align:right;
+   position: absolute;
+   right: 30px;
 }
 }
 @media screen and (min-width: 640px) {
@@ -279,9 +278,6 @@ h2 {
  }
  #mobileLogo {
    display: none;
- }
- .full-nav {
-   display: block;
  }
  .text-box h1 {
    font-size: 35px;
