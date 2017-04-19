@@ -4,6 +4,7 @@
   unsubscribeController.index = function() {
     $('.tab-content').hide();
     $('#unsubscribe-page').fadeIn();
+    $('#unsubscribeFooter').css('display','inline-block');
     webDB.execute('SELECT * FROM emails', function(emails) {
       if (emails.length) {
         $('#home-click').text('Home').attr('href', '/');
