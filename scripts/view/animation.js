@@ -24,7 +24,7 @@
     var value = localStorage.getItem(key);
     $('#number').html(value);
     if(value > 1){
-      $('#profile p').html('Unique senders');
+      $('#li').html('Unique senders');
     }
   };
   anim.insert('uniqueSenderNo');
