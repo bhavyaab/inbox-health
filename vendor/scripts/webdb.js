@@ -49,4 +49,8 @@
 
 // We can go ahead and set up the basic db connection now:
 // webDB.init(true);
-html5sql.openDatabase('inboxHealth', 'inboxHealth Database', 5*1024*1024);
+try {
+  html5sql.openDatabase('inboxHealth', 'inboxHealth Database', 5*1024*1024);
+}catch(error) {
+  console.error('Database create failed: ' + error.message);
+}

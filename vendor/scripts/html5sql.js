@@ -151,7 +151,6 @@ var html5sql = (function () {
 			//If all the statments happen to be select statments return true
       return true;
     };
-  var openDatabase;
   return {
     database: null,
     logInfo: false,
