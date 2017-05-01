@@ -1,7 +1,7 @@
 (function(module){
   var senderIdsTable = {};
   var count = 0;
-  createTableD = function(){
+  createTable = function(){
     webDB.execute(
      'CREATE TABLE IF NOT EXISTS senderIds(' +
        'sender VARCHAR NOT NULL,' +
@@ -9,7 +9,7 @@
        'allIds VARCHAR NOT NULL);'
     );
   };
-  senderIdsTable.createDelTable = function(from, ids){
+  senderIdsTable.insert = function(from, ids){
     webDB.execute([{
       'sql': 'INSERT INTO senderIds' +
       '(sender, emailsNo, allIds)' +
@@ -38,7 +38,7 @@
       };
     });
   };
-  createTableD();
+  createTable();
   senderIdsTable.insert();
   module.senderIdsTable = senderIdsTable;
 })(window);

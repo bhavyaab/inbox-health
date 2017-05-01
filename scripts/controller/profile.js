@@ -12,7 +12,7 @@
       profile.displayName = resp.displayName;
       profile.imageUrl = resp.image.url;
       profile.profileUrl = resp.url;
-      profileTable.createTable(profile.displayName, profile.imageUrl, profile.profileUrl);
+      profileTable.insert(profile.displayName, profile.imageUrl, profile.profileUrl);
     });
   };
   (module).profile = profile;

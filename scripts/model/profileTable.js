@@ -8,7 +8,7 @@
        'profileUrl VARCHAR NOT NULL);'
     );
   };
-  profileTable.createTable = function(displayName, imageUrl, profileUrl){
+  profileTable.insert = function(displayName, imageUrl, profileUrl){
     webDB.execute([{
       'sql': 'INSERT INTO profileTable' +
       '(displayName, imageUrl, profileUrl)' +
@@ -25,7 +25,7 @@
         document.getElementById('authorize-button').setAttribute( 'onClick', function() { page('/unsubscribe'); });
       }
       catch(e) {
-        document.getElementById('profile-image').src = "img/photo.jpg";
+        document.getElementById('profile-image').src = 'img/photo.jpg';
       }
     }});
   module.profileTable = profileTable;
