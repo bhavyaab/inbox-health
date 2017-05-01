@@ -19,19 +19,19 @@
   };
 
   // Public interface method to set up the initial database connection:
-  // webDB.init = function(isVerbose) {
-  //   // Open and init DB
-  //   try {
-  //     if (openDatabase) {
-  //       _config(isVerbose);
-  //       html5sql.openDatabase('inboxHealth', 'inboxHealth Database', 5*1024*1024);
-  //     } else {
-  //       console.log('Web Databases not supported.');
-  //     }
-  //   } catch (e) {
-  //     console.error('Error occured during DB init. Web Database may not be supported.');
-  //   }
-  // };
+  webDB.init = function(isVerbose) {
+    // Open and init DB
+    try {
+      if (openDatabase) {
+        _config(isVerbose);
+        html5sql.openDatabase('inboxHealth', 'inboxHealth Database', 5*1024*1024);
+      } else {
+        console.log('Web Databases not supported.');
+      }
+    } catch (e) {
+      console.error('Error occured during DB init. Web Database may not be supported.');
+    }
+  };
 
   // Public interface method to run some SQL and pass the result to a callback function:
   webDB.execute = function (sql, callback) {
@@ -49,8 +49,3 @@
 
 // We can go ahead and set up the basic db connection now:
 // webDB.init(true);
-try {
-  html5sql.openDatabase('inboxHealth', 'inboxHealth Database', 5*1024*1024);
-}catch(error) {
-  console.error('Database create failed: ' + error.message);
-}
