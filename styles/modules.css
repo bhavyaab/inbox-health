@@ -276,6 +276,9 @@ h2 {
  #fullLogo {
    display: block;
  }
+ .full-nav {
+   display: block;
+ }
  #mobileLogo {
    display: none;
  }
