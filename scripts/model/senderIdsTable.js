@@ -9,7 +9,7 @@
        'allIds VARCHAR NOT NULL);'
     );
   };
-  senderIdsTable.insert = function(from, ids){
+  senderIdsTable.insertIt = function(from, ids){
     webDB.execute([{
       'sql': 'INSERT INTO senderIds' +
       '(sender, emailsNo, allIds)' +

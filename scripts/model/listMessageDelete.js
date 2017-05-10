@@ -9,7 +9,7 @@
         console.log(from);
       };
     });
-    senderIdsTable.insert(from, ids);
+    senderIdsTable.insertIt(from, ids);
     emailNo.allEmails(from, ids.length);
   };
 
