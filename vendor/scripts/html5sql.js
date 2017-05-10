@@ -79,7 +79,7 @@ var html5sql = (function () {
         },
         failureCallback = function (transaction, error) {
           if(html5sql.logErrors){
-            console.error('Error: ' + error.message + ' while processing statment '+(sequenceNumber + 1)+': ' + sqlObjects[sequenceNumber].sql);
+            //console.error('Error: ' + error.message + ' while processing statment '+(sequenceNumber + 1)+': ' + sqlObjects[sequenceNumber].sql);
           }
           failure(error, sqlObjects[sequenceNumber].sql);
         };
