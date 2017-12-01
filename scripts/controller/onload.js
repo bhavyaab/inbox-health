@@ -8,7 +8,9 @@ gapi.client.init({
   'scope': 'https://mail.google.com/',
 }).then(function(){
   console.log(' im am reloaded');
-}}
+
+  gapi.client.load('gmail', 'v1', list.listMessages('me'));
+})
 
 
 module.load = load;
