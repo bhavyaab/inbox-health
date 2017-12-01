@@ -1,13 +1,13 @@
 (function(module) {
   var list = {};
-  list.listMessages = function(){
+  list.listMessages = function(userId){
     var getPageOfMessages = function(request, result) {
       request.execute(function(resp) {
         result = result.concat(resp.messages);
         var nextPageToken = resp.nextPageToken;
         if (nextPageToken && (result.length < 200)) {
           request = gapi.client.gmail.users.messages.list({
-            'userId': 'me',
+            'userId': userId,
             'pageToken': nextPageToken,
             'q': 'unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out' || 'SafeUnsubscribe' || 'SafeUnsubscribe™',
           });
@@ -19,7 +19,7 @@
       });
     };
     var initialRequest = gapi.client.gmail.users.messages.list({
-      'userId': 'me',
+      'userId': userId,
       'q':'unsubscribe' || 'Unsubscribe' || 'opt out' || '#opt out' || 'SafeUnsubscribe' || 'SafeUnsubscribe™',
       'resultSizeEstimate': 200,
     });
