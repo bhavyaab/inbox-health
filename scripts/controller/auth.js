@@ -33,6 +33,7 @@
   auth.loadGmailApi = function() {
     gapi.client.load('plus','v1', profile.info);
     gapi.client.load('gmail', 'v1', list.listMessages);
+    gapi.client.load('gmail', 'v1', watchGamilController.notification);
     page('/unsubscribe');
   };
 
