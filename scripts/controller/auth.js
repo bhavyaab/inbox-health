@@ -1,14 +1,16 @@
 (function(module) {
   var auth = {};
   var CLIENT_ID = '177098992391-62qc3rb4ovmlss7vtko4e280pgj6p8pp.apps.googleusercontent.com';
+  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/people/v1/rest"];
 
-  var SCOPES = ['https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/plus.login','https://mail.google.com/'];
+  var SCOPES = ['https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/contacts.readonly', 'https://www.googleapis.com/auth/plus.login','https://mail.google.com/'];
 
   auth.checkAuth = function() {
     gapi.auth.authorize(
       {
         'client_id': CLIENT_ID,
         'scope': SCOPES.join(' '),
+        'discoveryDocs': DISCOVERY_DOCS,
         'immediate': true
       }, auth.handleAuthResult);
   };
