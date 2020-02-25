@@ -11,9 +11,8 @@ import { response } from "express";
     });
 
     request.execute(function(resp) {
-      console.log('response:', response);
       profile.displayName = resp.displayName;
-      profile.picture = resp.image.url;
+      profile.picture = resp.picture;
       profile.profileUrl = resp.url;
       profileTable.insert(profile.displayName, profile.picture, profile.profileUrl);
     });

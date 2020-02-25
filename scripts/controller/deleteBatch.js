@@ -23,7 +23,7 @@
             localStorage.removeItem('from');
           }
         }).fail(function(error){
-          console.log(error);
+          // console.log(error);
           localStorage.removeItem('from');
           something.wentWrong();
         });
